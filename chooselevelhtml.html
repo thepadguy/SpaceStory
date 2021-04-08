@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="nametext.css">
     <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <script>
-        var isModalUp = false;
+        /*var isModalUp = false;
         function possiblyCloseModal() {
             if (isModalUp == true) {
                 var modal = document.getElementById("startModal");
@@ -35,7 +35,7 @@
         window.onclick = function() {
             possiblyCloseModal();
         }
-        
+        */
         function makeButtonsLeave() {
             document.getElementById("sidebuttondiv").classList.add("sidebuttonsLeaveAnim");
             document.getElementById("levellistdiv").classList.add("levelListLeaveAnim");
@@ -49,7 +49,7 @@
         function onLevelButtonClicked(num) {
             var modal = document.getElementById("startModal");
             modal.style.display = "block";
-            isModalUp = true;
+            //isModalUp = true;
             //cases for which image to load
             var myImg = new Image();
             var caption;
