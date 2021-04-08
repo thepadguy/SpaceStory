@@ -114,6 +114,7 @@ div.wallLeft{
     top:0;
     opacity: 1;
     z-index: 999;
+    touch-action: manipulation;
 }
 
 div.wallRight{
@@ -125,6 +126,7 @@ div.wallRight{
     top:0;
     opacity: 1;
     z-index:999;
+    touch-action: manipulation;
 }
 
 div.animatedTitlePlay{
@@ -268,6 +270,7 @@ div.gameArea{
     height:100vh;
     width: 94.6vw;
     left:2.7vw;
+    touch-action: manipulation;
 }
 
 div.astroidArea{
@@ -276,6 +279,7 @@ div.astroidArea{
     height:90vh;
     width:94.6vw;
     left:0vw;
+    touch-action: manipulation;
 }
 
 div.bottomArea{
@@ -286,6 +290,7 @@ div.bottomArea{
     left:0vw;
     z-index:999;
     animation: bringBottomAreaOnLevelTemplateHere 2s 1 linear forwards;
+    touch-action: manipulation;
 }
 
 div.spaceCraftArea{
@@ -294,6 +299,7 @@ div.spaceCraftArea{
     height: 20vh;
     width:94.6vw;
     left:0vw;
+    touch-action: manipulation;
 }
 
 div.statsArea{
@@ -302,6 +308,7 @@ div.statsArea{
     height: 5vh;
     width:94.6vw;
     left:0vw;
+    touch-action: manipulation;
 }
 
 div.splitter{
@@ -311,6 +318,7 @@ div.splitter{
     width:100.42%;
     left:-0.21%;
     background: linear-gradient(45deg, #343434, black);
+    touch-action: manipulation;
 }
 div.splitter2{
     position:absolute;
@@ -319,6 +327,7 @@ div.splitter2{
     width:100.42%;
     left:-0.21%;
     background: linear-gradient(-45deg, #343434, black);
+    touch-action: manipulation;
 }
 div.splitter3{
     position:absolute;
@@ -327,6 +336,7 @@ div.splitter3{
     width:100.42%;
     left:-0.21%;
     background: linear-gradient(45deg, #343434, black);
+    touch-action: manipulation;
 }
 div.splitter4{
     position:absolute;
@@ -335,6 +345,7 @@ div.splitter4{
     width:100.42%;
     left:-0.21%;
     background: linear-gradient(-45deg, #343434, black);
+    touch-action: manipulation;
 }
 
 div.column1Astro{
@@ -345,6 +356,7 @@ div.column1Astro{
     left:2.3vw;
     display: flex;
     justify-content: center;
+    touch-action: manipulation;
 }
 
 div.column2Astro{
@@ -355,6 +367,7 @@ div.column2Astro{
     left:32.3vw;
     display: flex;
     justify-content: center;
+    touch-action: manipulation;
 }
 
 div.column3Astro{
@@ -365,6 +378,7 @@ div.column3Astro{
     left:62.3vw;
     display: flex;
     justify-content: center;
+    touch-action: manipulation;
 }
 
 div.columnCraft1{
@@ -376,6 +390,7 @@ div.columnCraft1{
     justify-content: center;
     display: flex;
     align-items: center;
+    touch-action: manipulation;
 }
 
 div.columnCraft2{
@@ -387,6 +402,7 @@ div.columnCraft2{
     justify-content: center;
     display: flex;
     align-items: center;
+    touch-action: manipulation;
 }
 
 div.columnCraft3{
@@ -398,6 +414,7 @@ div.columnCraft3{
     justify-content: center;
     display: flex;
     align-items: center;
+    touch-action: manipulation;
 }
 
 
@@ -413,6 +430,7 @@ div.columnCraft3{
         display: flex;
         align-items: center;
         justify-content: center;
+        touch-action: manipulation;
     }
 
     div.spaceCraftContainer2{
@@ -423,6 +441,7 @@ div.columnCraft3{
         display:flex;
         align-items:center;
         justify-content: center;
+        touch-action: manipulation;
     }
 
     div.spaceCraftContainer3{
@@ -433,12 +452,14 @@ div.columnCraft3{
         display:flex;
         align-items:center;
         justify-content: center;
+        touch-action: manipulation;
     }
     
     image.spaceCraftImage{
         position:absolute;
         max-width:15vh;
         height:15vh;
+        touch-action: manipulation;
     }
 
 }
@@ -455,6 +476,7 @@ div.columnCraft3{
         display:flex;
         align-items:center;
         justify-content: center;
+        touch-action: manipulation;
     }
     
     div.spaceCraftContainer2{
@@ -466,6 +488,7 @@ div.columnCraft3{
         display:flex;
         align-items:center;
         justify-content: center;
+        touch-action: manipulation;
     }
     
     div.spaceCraftContainer3{
@@ -477,6 +500,7 @@ div.columnCraft3{
         display:flex;
         align-items:center;
         justify-content: center;
+        touch-action: manipulation;
     }
 
     image.spaceCraftImage{
@@ -484,6 +508,7 @@ div.columnCraft3{
         width: 23.9vw;
         height: auto;
         max-width:100%;
+        touch-action: manipulation;
     }
 
 }
@@ -493,6 +518,7 @@ div.boxClass{
     width: 20px;
     height: 20px;
     background-color: black;
+    touch-action: manipulation;
 }
 
 div.spacerClass{
@@ -524,6 +550,7 @@ div.modal {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+    touch-action: manipulation;
 }
 
 div.modal-content {
@@ -535,6 +562,7 @@ div.modal-content {
     border-width: 10px;
     display: flex;
     justify-content: center;
+    touch-action: manipulation;
 }
 
 .close{
@@ -554,6 +582,7 @@ div.modal-content {
     font-family:'PixelGosub';
     color: #c0c0c0;
     font-size: 28px;
+    touch-action: manipulation;
 }
 
 button.abortButton{
@@ -565,16 +594,19 @@ button.abortButton{
     box-shadow: none;
     border: none;
     color: #c0c0c0;
+    touch-action: manipulation;
 }
 button.abortButton:focus{
     background-color: #c0c0c0;
     color: #343434;
     border: none;
     box-shadow: none;
+    touch-action: manipulation;
 }
 button.abortButton:hover{
     background-color: #c0c0c0;
     color: #343434;
+    touch-action: manipulation;
 }
 
 div.moveSpaceCraftAreaAway {
