@@ -102,6 +102,9 @@
 
             }, 2000);
         }
+        function onClickStartModalClose() {
+            var modal = document.getElementById("startModal");
+            modal.style.display = "none";
     </script>
 </head>
 
@@ -111,7 +114,7 @@
         </div>
         <div class="wallRight">
         </div>
-        <div id="startModal" class="modal" style="padding-top: 20px;">
+        <div id="startModal" class="modal" style="padding-top: 20px;" onclick="onClickStartModalClose();">
             <div class="modal-content">
                 <center>
                     <p id="imageCaption" style="font-family: 'PixelGosub'; color:#c0c0c0; font-size:25px; margin:0%;">
