@@ -9,6 +9,7 @@
         body {
             background-color: #c0c0c0;
             overflow: hidden;
+            touch-action: manipulation;
         }
     </style>
     <link rel="stylesheet" href="nametext.css">
@@ -32,29 +33,29 @@
 
 <body>
     <div id="leveltemplatescreen">
-        <div class="wallLeft">
+        <div class="wallLeft" style="touch-action: manipulation;">
         </div>
-        <div class="wallRight">
+        <div class="wallRight" style="touch-action: manipulation;">
         </div>
-        <div id="finishedModal" class="modal">
-            <div class="modal-content">
-                <center>
-                    <p class="modal-paragraph-1">
+        <div id="finishedModal" class="modal" style="touch-action: manipulation;">
+            <div class="modal-content" style="touch-action: manipulation;">
+                <center style="touch-action: manipulation;">
+                    <p class="modal-paragraph-1" style="touch-action: manipulation;">
                         Asteroid zone cleared.
                         <br>
                         Setting route for nearest hangar.
                         <br>
                         Waiting for perimission to start travelling.
                     </p>
-                    <button id="finishbutton" class="abortButton" onclick="closeFinishModalAndQuit();">
+                    <button id="finishbutton" class="abortButton" onclick="closeFinishModalAndQuit();" style="touch-action: manipulation;">
                     Grant permission
                     </button>
                 </center>
             </div>
         </div>
-        <div id="startModal" class="modal">
-            <div class="modal-content">
-                <center>
+        <div id="startModal" class="modal" style="touch-action: manipulation;">
+            <div class="modal-content" style="touch-action: manipulation;">
+                <center style="touch-action: manipulation;">
                     <p class="modal-paragraph-1" style="touch-action:manipulation;">
                         Approaching asteroid field somenamehere
                         <br>
@@ -62,16 +63,16 @@
                         <br>
                         Waiting for permission to proceed.
                     </p>
-                    <button id="proceedbutton" class="abortButton" onclick="closeModalAndStartGame();">
+                    <button id="proceedbutton" class="abortButton" onclick="closeModalAndStartGame();" style="touch-action: manipulation;">
                         Proceed
                     </button>
                 </center>
             </div>
         </div>
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <center>
-                    <p id="modal-paragraph1" class="modal-paragraph-1">
+        <div id="myModal" class="modal" style="touch-action: manipulation;">
+            <div class="modal-content" style="touch-action: manipulation;">
+                <center style="touch-action: manipulation;">
+                    <p id="modal-paragraph1" class="modal-paragraph-1" style="touch-action: manipulation;">
                         !!DANGER!!
                         <br>
                         Spacecraft collided with asteroid.
@@ -82,19 +83,19 @@
                         <br>
                         Asteroids destroyed: 
                     </p>
-                    <button id="abortbutton" class="abortButton" onclick="closeModalOnClickAndChangePage()">
+                    <button id="abortbutton" class="abortButton" onclick="closeModalOnClickAndChangePage()" style="touch-action: manipulation;">
                         Abort mission
                     </button>
                 </center>
             </div>
         </div>
-        <div id="gamearea" class="gameArea">
-            <div id="astroidarea" class="astroidArea">
-                <div id="column1astro" class="column1Astro" onclick="onClickColumn1();">
+        <div id="gamearea" class="gameArea" style="touch-action: manipulation;">
+            <div id="astroidarea" class="astroidArea" style="touch-action: manipulation;">
+                <div id="column1astro" class="column1Astro" onclick="onClickColumn1();" style="touch-action: manipulation;">
                 </div>
-                <div id="column2astro" class="column2Astro" onclick="onClickColumn2();">
+                <div id="column2astro" class="column2Astro" onclick="onClickColumn2();" style="touch-action: manipulation;">
                 </div>
-                <div id="column3astro" class="column3Astro" onclick="onClickColumn3();">
+                <div id="column3astro" class="column3Astro" onclick="onClickColumn3();" style="touch-action: manipulation;">
                 </div>
                 <script>
                     //create the boxes
@@ -209,33 +210,33 @@
                     }
                 </script>
             </div>
-            <div id="bottomarea" class="bottomArea">
-                <div id="spacecraftarea" class="spaceCraftArea">
-                    <div id="columncraft1" class="columnCraft1">
-                        <div id="spacecraftcontainer1" class="spaceCraftContainer1">
+            <div id="bottomarea" class="bottomArea" style="touch-action: manipulation;">
+                <div id="spacecraftarea" class="spaceCraftArea" style="touch-action: manipulation;">
+                    <div id="columncraft1" class="columnCraft1" style="touch-action: manipulation;">
+                        <div id="spacecraftcontainer1" class="spaceCraftContainer1" style="touch-action: manipulation;">
                             <img src="spaceshipimage.png" alt="spaceship1" class="spaceCraftImage" id="spacecraft1"
-                                onclick="onClickColumn1();">
+                                onclick="onClickColumn1();" style="touch-action: manipulation;">
                         </div>
                     </div>
-                    <div id="columncraft2" class="columnCraft2">
-                        <div id="spacecraftcontainer2" class="spaceCraftContainer2">
+                    <div id="columncraft2" class="columnCraft2" style="touch-action: manipulation;">
+                        <div id="spacecraftcontainer2" class="spaceCraftContainer2" style="touch-action: manipulation;">
                             <img src="spaceshipimage.png" alt="spaceship2" class="spaceCraftImage" id="spacecraft2"
-                                onclick="onClickColumn2();">
+                                onclick="onClickColumn2();" style="touch-action: manipulation;">
                         </div>
                     </div>
-                    <div id="columncraft3" class="columnCraft3">
-                        <div id="spacecraftcontainer3" class="spaceCraftContainer3">
+                    <div id="columncraft3" class="columnCraft3" style="touch-action: manipulation;">
+                        <div id="spacecraftcontainer3" class="spaceCraftContainer3" style="touch-action: manipulation;">
                             <img src="spaceshipimage.png" alt="spaceship3" class="spaceCraftImage" id="spacecraft3"
-                                onclick="onClickColumn3();">
+                                onclick="onClickColumn3();" style="touch-action: manipulation;">
                         </div>
                     </div>
                 </div>
-                <div id="statsarea" class="statsArea">
-                    <div id="splitter" class="splitter">
+                <div id="statsarea" class="statsArea" style="touch-action: manipulation;">
+                    <div id="splitter" class="splitter" style="touch-action: manipulation;">
                     </div>
-                    <div class="splitter2"></div>
-                    <div class="splitter3"></div>
-                    <div class="splitter4"></div>
+                    <div class="splitter2" style="touch-action: manipulation;"></div>
+                    <div class="splitter3" style="touch-action: manipulation;"></div>
+                    <div class="splitter4" style="touch-action: manipulation;"></div>
                 </div>
             </div>
         </div>
