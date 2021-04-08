@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        VisualSpace
+    </title>
+    <link rel="stylesheet" href="nametext.css">
+    <style>
+        body {
+            background-color: #c0c0c0;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        function makeButtonsLeave() {
+            document.getElementById("buttonDiv").classList.add("menubuttonsLeaveAnim");
+            document.getElementById("sidebuttons").classList.add("sidebuttonsLeaveAnim");
+        }
+        function onBackClicked() {
+            makeButtonsLeave();
+            setTimeout(() => {
+                window.history.back(1);
+            }, 2000);
+        }
+        function onChooseLevelClicked() {
+            makeButtonsLeave();
+            setTimeout(() => {
+                window.location.href = "chooselevelhtml.html";
+            }, 2000);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="buttonsScreen">
+        <div class="wallLeft">
+        </div>
+        <div class="wallRight">
+        </div>
+        <div id="buttonDiv" class="buttons">
+            <button class="menubuttons" onclick="onChooseLevelClicked();">
+                Choose Level
+            </button>
+            <br>
+            <button class="menubuttons">
+                Record Level
+            </button>
+        </div>
+        <div id="sidebuttons" class="sideButtonsDiv">
+            <button class="sidebutton">
+                help
+            </button>
+        </br>
+            <button class="sidebutton">
+                info
+            </button>
+        </br>
+            <button class="sidebutton" onclick="onBackClicked();">
+                back
+            </button>
+        </div>
+    </div>
+</body>
+
+
+</html>

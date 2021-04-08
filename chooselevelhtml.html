@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        VisualSpace
+    </title>
+    <style>
+        body {
+            background-color: #c0c0c0;
+            overflow: hidden;
+        }
+
+        ol {
+            list-style-type: none;
+            margin-top: 0%;
+            overflow: auto;
+            max-height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="nametext.css">
+    <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0">
+    <script>
+        function makeButtonsLeave() {
+            document.getElementById("sidebuttondiv").classList.add("sidebuttonsLeaveAnim");
+            document.getElementById("levellistdiv").classList.add("levelListLeaveAnim");
+        }
+        function onBackClicked() {
+            makeButtonsLeave();
+            setTimeout(() => {
+                window.history.back(1);
+            }, 2000);
+        }
+        function onLevelButtonClicked(num) {
+            var modal = document.getElementById("startModal");
+            modal.style.display = "block";
+            //cases for which image to load
+            var myImg = new Image();
+            var caption;
+            var context = document.getElementById('imageCanvas').getContext('2d');
+            switch (num) {
+                case 1:
+                    myImg.src = "image1.jpg";
+                    caption = "Minoan Spring - 1550-1500 B.C."
+                    break;
+
+                default:
+                    break;
+            }
+            myImg.crossOrigin = 'Anonymous';
+            console.log(myImg);
+            console.log(myImg.src);
+            myImg.onload = draw;
+            function draw() {
+                var canvas = document.getElementById("imageCanvas");
+                var captionpar = document.getElementById("imageCaption");
+                captionpar.innerHTML = "Map name: " + caption;
+                canvas.setAttribute("width", myImg.width.toString());
+                canvas.setAttribute("height", myImg.height.toString());
+                context.drawImage(myImg, 0, 0);
+                console.log("drew");
+                analyze();
+            }
+            function analyze() {
+                var canvas = document.getElementById("imageCanvas");
+                var context = canvas.getContext('2d');
+                var imageData = context.getImageData(0,0,canvas.width, canvas.height);
+                console.log(imageData);
+            }
+        }
+        function passParamsAndChangePage(num) {
+            var modal = document.getElementById("startModal");
+            modal.style.display = "none";
+            makeButtonsLeave();
+            setTimeout(() => {
+                switch (num) {
+                    case 1:
+                        window.location.href = "leveltemplatehtml.html?&level_id=1&level_name=map1";
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }, 2000);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="chooseLevelScreen">
+        <div class="wallLeft">
+        </div>
+        <div class="wallRight">
+        </div>
+        <div id="startModal" class="modal" style="padding-top: 20px;">
+            <div class="modal-content">
+                <center>
+                    <p id="imageCaption" style="font-family: 'PixelGosub'; color:#c0c0c0; font-size:25px; margin:0%;">
+                        TestCaption</p>
+                    <br>
+                    <canvas id="imageCanvas">
+
+                    </canvas>
+                    <br>
+                    <button id="proceedbutton" class="abortButton" onclick="passParamsAndChangePage(1);">
+                        Proceed
+                    </button>
+                </center>
+            </div>
+        </div>
+        <div id="sidebuttondiv" class="sideButtonsDiv">
+            <button class="sidebutton" onclick="onBackClicked();">
+                back
+            </button>
+        </div>
+        <div id="levellistdiv" class="levelListDiv">
+            <ol>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        Classics
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton" onclick="onLevelButtonClicked(1);">
+                        Level 1: Armanen
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Level 2: Shape of Lies - Eternal Eclipse
+                    </button>
+                </li>
+        </div>
+    </div>
+</body>
+
+</html>

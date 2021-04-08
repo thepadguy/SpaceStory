@@ -1,0 +1,5 @@
+[-]Better not use mainhtml or something that includes an iframe, cause when page changes it flashes.
+[-]Spaceship image design works with minimum width of 392 and minimum height of 353
+[-]AUDIOSPACE title works well with at least 403px width
+[-]There is no need to add spacerboxes to the document, the boxclasses work the same with or without them. We have commented out the places where they are appended to document and where their ids are added to the idsArray, but the code that creates them is still there, we might remove it later.
+[-]As per the setInterval in leveltemplatehtml or whatever the file is called, we don't know how to make it stop, nothing worked. But for some reason a bug appeared, that causes an error when we crash, and when we press the button on the "modal", it changes pages and "destroys" the setInterval, this is really good, so reminder, do not fix that bug.

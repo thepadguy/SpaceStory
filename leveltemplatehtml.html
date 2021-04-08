@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        VisualSpace
+    </title>
+    <style>
+        body {
+            background-color: #c0c0c0;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="nametext.css">
+    <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0">
+    <script>
+        var astroColsArray = [];
+        astroColsArray = [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2];
+        var idsArray = [];
+        var column1ids = [];
+        var column2ids = [];
+        var column3ids = [];
+        var score = 0;
+        var url = window.location.href;
+        var urlSearcher  = new URLSearchParams(url);
+        var mapName = urlSearcher.get("level_name");
+        var levelId = urlSearcher.get("level_id");
+        console.log(mapName);
+        console.log(levelId);
+    </script>
+</head>
+
+<body>
+    <div id="leveltemplatescreen">
+        <div class="wallLeft">
+        </div>
+        <div class="wallRight">
+        </div>
+        <div id="finishedModal" class="modal">
+            <div class="modal-content">
+                <center>
+                    <p class="modal-paragraph-1">
+                        Asteroid zone cleared.
+                        <br>
+                        Setting route for nearest hangar.
+                        <br>
+                        Waiting for perimission to start travelling.
+                    </p>
+                    <button id="finishbutton" class="abortButton" onclick="closeFinishModalAndQuit();">
+                    Grant permission
+                    </button>
+                </center>
+            </div>
+        </div>
+        <div id="startModal" class="modal">
+            <div class="modal-content">
+                <center>
+                    <p class="modal-paragraph-1">
+                        Approaching asteroid field somenamehere
+                        <br>
+                        Spacecrafts are on position.
+                        <br>
+                        Waiting for permission to proceed.
+                    </p>
+                    <button id="proceedbutton" class="abortButton" onclick="closeModalAndStartGame();">
+                        Proceed
+                    </button>
+                </center>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <center>
+                    <p id="modal-paragraph1" class="modal-paragraph-1">
+                        !!DANGER!!
+                        <br>
+                        Spacecraft collided with asteroid.
+                        <br>
+                        We've got casualties.
+                        <br>
+                        Aborting mission.
+                        <br>
+                        Asteroids destroyed: 
+                    </p>
+                    <button id="abortbutton" class="abortButton" onclick="closeModalOnClickAndChangePage()">
+                        Abort mission
+                    </button>
+                </center>
+            </div>
+        </div>
+        <div id="gamearea" class="gameArea">
+            <div id="astroidarea" class="astroidArea">
+                <div id="column1astro" class="column1Astro" onclick="onClickColumn1();">
+                </div>
+                <div id="column2astro" class="column2Astro" onclick="onClickColumn2();">
+                </div>
+                <div id="column3astro" class="column3Astro" onclick="onClickColumn3();">
+                </div>
+                <script>
+                    //create the boxes
+                    var counter = 1;
+                    var astroDiv1 = document.getElementById("column1astro");
+                    var astroDiv2 = document.getElementById("column2astro");
+                    var astroDiv3 = document.getElementById("column3astro");
+                    for (const num of astroColsArray) {
+                        if (num == 0) {
+                            //creating element
+                            var el = document.createElement("div");
+                            var counters = counter.toString();
+                            var id = "box" + counters;
+                            //alert(id);
+                            el.setAttribute("id", id);
+                            el.classList.add("boxClass");
+                            var topCoord = (-1) * (counter - 1) * 20 - 30;
+                            var topCoords = topCoord.toString();
+                            el.setAttribute("style", "top: " + topCoords + "px;");
+
+                            //creating spacer1
+                            var sp1 = document.createElement("div");
+                            var id1 = "spacera" + counters;
+                            sp1.setAttribute("id", id1);
+                            sp1.classList.add("spacerClass");
+                            sp1.setAttribute("style", "top: " + topCoords + "px;");
+
+                            //creating spacer2
+                            var sp2 = document.createElement("div");
+                            var id2 = "spacerb" + counters;
+                            sp2.setAttribute("id", id2);
+                            sp2.classList.add("spacerClass");
+                            sp2.setAttribute("style", "top: " + topCoords + "px;");
+
+                            ++counter;
+                            astroDiv1.appendChild(el);
+                            //astroDiv2.appendChild(sp1);
+                            //astroDiv3.appendChild(sp2);
+                            idsArray.push(id);
+                            column1ids.push(id);
+                            //idsArray.push(id1);
+                            //idsArray.push(id2);
+                        } else if (num == 1) {
+                            //creating element
+                            var el = document.createElement("div");
+                            var counters = counter.toString();
+                            var id = "box" + counters;
+                            //alert(id);
+                            el.setAttribute("id", id);
+                            el.classList.add("boxClass");
+                            var topCoord = (-1) * (counter - 1) * 20 - 30;
+                            var topCoords = topCoord.toString();
+                            el.setAttribute("style", "top: " + topCoords + "px;");
+
+                            //creating spacer1
+                            var sp1 = document.createElement("div");
+                            var id1 = "spacera" + counters;
+                            sp1.setAttribute("id", id1);
+                            sp1.classList.add("spacerClass");
+                            sp1.setAttribute("style", "top: " + topCoords + "px;");
+
+                            //creating spacer2
+                            var sp2 = document.createElement("div");
+                            var id2 = "spacerb" + counters;
+                            sp2.setAttribute("id", id2);
+                            sp2.classList.add("spacerClass");
+                            sp2.setAttribute("style", "top: " + topCoords + "px;");
+
+                            ++counter;
+                            //astroDiv1.appendChild(sp1);
+                            astroDiv2.appendChild(el);
+                            //astroDiv3.appendChild(sp2);
+                            idsArray.push(id);
+                            column2ids.push(id);
+                            //idsArray.push(id1);
+                            //idsArray.push(id2);
+                        } else if (num == 2) {
+                            //creating element
+                            var el = document.createElement("div");
+                            var counters = counter.toString();
+                            var id = "box" + counters;
+                            //alert(id);
+                            el.setAttribute("id", id);
+                            el.classList.add("boxClass");
+                            var topCoord = (-1) * (counter - 1) * 20 - 30;
+                            var topCoords = topCoord.toString();
+                            el.setAttribute("style", "top: " + topCoords + "px;");
+
+                            //creating spacer1
+                            var sp1 = document.createElement("div");
+                            var id1 = "spacera" + counters;
+                            sp1.setAttribute("id", id1);
+                            sp1.classList.add("spacerClass");
+                            sp1.setAttribute("style", "top: " + topCoords + "px;");
+
+                            //creating spacer2
+                            var sp2 = document.createElement("div");
+                            var id2 = "spacerb" + counters;
+                            sp2.setAttribute("id", id2);
+                            sp2.classList.add("spacerClass");
+                            sp2.setAttribute("style", "top: " + topCoords + "px;");
+
+                            ++counter;
+                            // astroDiv1.appendChild(sp1);
+                            // astroDiv2.appendChild(sp2);
+                            astroDiv3.appendChild(el);
+                            idsArray.push(id);
+                            column3ids.push(id);
+                            // idsArray.push(id1);
+                            // idsArray.push(id2);
+                        }
+                    }
+                </script>
+            </div>
+            <div id="bottomarea" class="bottomArea">
+                <div id="spacecraftarea" class="spaceCraftArea">
+                    <div id="columncraft1" class="columnCraft1">
+                        <div id="spacecraftcontainer1" class="spaceCraftContainer1">
+                            <img src="spaceshipimage.png" alt="spaceship1" class="spaceCraftImage" id="spacecraft1"
+                                onclick="onClickColumn1();">
+                        </div>
+                    </div>
+                    <div id="columncraft2" class="columnCraft2">
+                        <div id="spacecraftcontainer2" class="spaceCraftContainer2">
+                            <img src="spaceshipimage.png" alt="spaceship2" class="spaceCraftImage" id="spacecraft2"
+                                onclick="onClickColumn2();">
+                        </div>
+                    </div>
+                    <div id="columncraft3" class="columnCraft3">
+                        <div id="spacecraftcontainer3" class="spaceCraftContainer3">
+                            <img src="spaceshipimage.png" alt="spaceship3" class="spaceCraftImage" id="spacecraft3"
+                                onclick="onClickColumn3();">
+                        </div>
+                    </div>
+                </div>
+                <div id="statsarea" class="statsArea">
+                    <div id="splitter" class="splitter">
+                    </div>
+                    <div class="splitter2"></div>
+                    <div class="splitter3"></div>
+                    <div class="splitter4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var flag1 = true;
+        var shouldIRun1 = true;
+        var shouldIntervalRun1 = true;
+        var isGameLoopRunning = false;
+        var shouldFinishModalAppear = true;
+        //must be at least 2000sec because we have to wait for animation to finish
+        setTimeout(() => {
+            //just declaring some vars
+            makeStartModalAppear();
+            //intervalThingy(shouldIntervalRun1, shouldIRun1);
+            /*
+            FOR DEBUGGING PURPOSES
+            for(i=0;i<400;++i) {
+                incrementTopForEveryElement();
+            }*/
+        }, 3500);
+
+        //TO CONTINUE FROM HEREEEEEEEEEEEEEEEEEEE
+        //for detecting keyboard press
+        //this code should be modified
+        window.onkeypress = function (evt) {
+            evt = evt || window.event;
+            var charCode = evt.keyCode || evt.which;
+            var charStr = String.fromCharCode(charCode);
+            //console.log(charStr);
+            if ((charStr == "a") || (charStr == "A")) {
+                onClickColumn1();
+            } else if ((charStr == "s") || (charStr == "S")) {
+                onClickColumn2();
+            } else if ((charStr == "d") || (charStr == "D")) {
+                onClickColumn3();
+            }
+        }
+
+        function intervalThingy(intervalFlag, innerFlag) {
+            isGameLoopRunning = true;
+            var flagin = true;
+            if (intervalFlag == true) {
+                var drawer = setInterval(() => {
+                    flagin = incrementTopForEveryElement();
+                    //console.log(flagin);
+                    if (flagin == false) {
+                        clearInterval(drawer);
+                    }
+                }, 10);
+            }
+        }
+
+        function incrementTop(id) {
+            var topValue = document.getElementById(id).style.top;
+            var topValueint = parseInt(topValue);
+            var newTopValueint = topValueint + 1;
+            var newTopString = newTopValueint.toString() + "px;";
+            document.getElementById(id).style = "";
+            document.getElementById(id).style = "top: " + newTopString;
+            //console.log(document.getElementById(id).style.top);
+        }
+
+        function shouldIIncrement() {
+            var lastId = idsArray[idsArray.length - 1];
+            var lastEl = document.getElementById(lastId);
+            var lastTop = lastEl.style.top;
+            var lastTopInt = parseInt(lastTop);
+            if (lastTopInt > window.innerHeight) {
+                //stop
+                return 1;
+            } else {
+                //don't stop
+                return 0;
+            }
+        }
+
+        function testAlertOne() {
+            alert("collision occured");
+            clearInterval(drawer);
+        }
+
+        function incrementTopForEveryElement() {
+            var collideCheck = false;
+            var flag2 = true;
+            if (idsArray.length == 0) {
+                shouldIntervalRun1 = false;
+                isGameLoopRunning = false;
+                if(shouldFinishModalAppear == true) {
+                    setTimeout(() => {
+                        console.log(score.toString()+"/"+astroColsArray.length.toString());
+                        makeFinishModalAppear();
+                    }, 400);
+                
+                }
+                //clearInterval(drawer);
+                return false;
+            }
+            for (const id of idsArray) {
+                var retVal = shouldIIncrement();
+                collideCheck = doesItCollide(id);
+                //console.log(isClear);
+                //console.log(collideCheck);
+                //console.log(retVal);
+                if ((retVal == 1)) {
+                    //clearInterval(drawer);
+                    shouldIntervalRun1 = false;
+                    isGameLoopRunning = false;
+                    console.log(isGameLoopRunning);
+                    alert("retval is 1");
+                    return false;
+                } else if (collideCheck == true) {
+                    //clearInterval(drawer);
+                    shouldIntervalRun1 = false;
+                    isGameLoopRunning = false;
+                    console.log(isGameLoopRunning);
+                    console.log(score.toString()+"/"+astroColsArray.length.toString());
+                    makeModalAppear();
+                    //clearInterval(drawer);
+                    return false;
+                }
+                incrementTop(id);
+            }
+            return true;
+        }
+
+        //here we write the function that checks
+        //whether a block is upon the image
+        function doesItCollide(id) {
+            //getCoords of images
+            var spacecraft1 = document.getElementById("spacecraft1").getBoundingClientRect();
+            //var spacecraft1top = document.getElementById("spacecraft1").getBoundingClientRect().y;
+            // var spacecraft2top = document.getElementById("spacecraft2").getBoundingClientRect().y;
+            // var spacecraft3top = document.getElementById("spacecraft3").getBoundingClientRect().y;
+
+            //spacecrafts all share the same top
+
+            //get box bottom
+            var box = document.getElementById(id).getBoundingClientRect();
+            //var boxTop = document.getElementById(id).getBoundingClientRect().y;
+            //var boxHeight = document.getElementById(id).getBoundingClientRect().height;
+            //var boxBottom = boxTop + boxHeight;
+
+            //better get the id of the box, might be needed later
+            //var numstr = id.match(/\d+/)[0];
+            //var num = parseInt(numstr);
+            //find column
+
+            //TESTING OTHER WAY 1
+            //console.log(boxTop);
+            /*if(boxTop == spacecraft1top) {
+                console.log("collision");
+                return 1;
+            } else {
+                console.log(boxTop);
+                return 0;
+            }*/
+
+            //TESTING OTHER WAY 2
+            return !(
+                ((spacecraft1.y + spacecraft1.height) < (box.y)) ||
+                (spacecraft1.y > (box.y + box.height - 22))
+                //stuff below here not needed
+                //||
+                /*((spacecraft1.x + spacecraft1.width) < box.x) ||
+                (spacecraft1.x > (box.x + box.width))*/
+            );
+
+            //HUGE COMMENT OUT FOR DEBUG REASONS STARTS HERE
+            /*
+            var remnant = num % 3;
+            var column;
+            if(remnant==0) {
+                column = 3;
+            } else if (remnant == 1) {
+                column = 2;
+            } else if (remnant == 2) {
+                column = 1;
+            }
+            if (num == 1) {
+                column = 1;
+            } else if (num == 2) {
+                column = 2;
+            }
+
+
+            //check if collision
+            if (column == 1) {
+                //check for collistion with spacecraft1
+                if (boxTop == spacecraft1top) {
+                    console.log("collided with 1");
+                    return 1;
+                } else {
+                    return 0;
+                }
+            } else if(column == 2) {
+                //check for collision with spacecraft2
+                if(boxTop == spacecraft2top) {
+                    console.log("collided with 2");
+                    return 1;
+                } else {
+                    return 0;
+                }
+            } else if(column == 3) {
+                //check for collision with spacecraft3
+                if(boxTop == spacecraft3top) {
+                    console.log("collided with 3");
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+            */
+            //HUGE COMMENT OUT FOR DEBUG REASONS ENDS HERE
+
+        }
+
+        function closeModalOnClickAndChangePage() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none;"
+            shouldIRun1 = false;
+            window.history.back(1);
+            shouldIntervalRun1 = false;
+            clearInterval(drawer);
+
+        }
+
+        function makeModalAppear() {
+            var modal = document.getElementById("myModal");
+            /*var modalParent = document.getElementById("forModal");
+            modalParent.style.visibility = "";
+            modalParent.style.zIndex = "";
+            modalParent.style.visibility = "visible;"
+            modalParent.style.zIndex = "999"
+            modalParent.style.display = "block";*/
+            document.getElementById("modal-paragraph1").innerHTML = document.getElementById("modal-paragraph1").innerHTML+ (score.toString()+"/"+astroColsArray.length.toString());
+            modal.style.display = "block";
+        }
+
+        function makeStartModalAppear() {
+            var modal = document.getElementById("startModal");
+            modal.style.display = "block";
+        }
+
+        function closeModalAndStartGame() {
+            var modal = document.getElementById("startModal");
+            modal.style.display = "none";
+            setTimeout(() => {
+                intervalThingy(shouldIntervalRun1, shouldIRun1);
+            }, 400);
+            
+        }
+
+        function makeFinishModalAppear() {
+            var modal = document.getElementById("finishedModal");
+            modal.style.display = "block";
+        }
+
+        function closeFinishModalAndQuit() {
+            var modal = document.getElementById("finishedModal");
+            modal.style.display="none";
+            modal.remove();
+            shouldFinishModalAppear = false;
+            setTimeout(() => {
+                document.getElementById("spacecraftarea").classList.add("moveSpaceCraftAreaAway");
+            }, 400);
+
+            setTimeout(() => {
+                window.history.back(1);
+            }, 2500);
+            
+        }
+
+        function onClickColumn1() {
+            if (isGameLoopRunning == true) {
+                if (column1ids.length != 0) {
+                    var firstId = column1ids[0];
+                    var firstelement = document.getElementById(firstId);
+                    var indexInIds = idsArray.indexOf(firstId);
+
+                    //creating a new div here for the flashing animation
+                    var spacecrafty = document.getElementById("spacecraft1").getBoundingClientRect().y;
+                    var div1 = document.getElementById("column1astro");
+                    var temp = spacecrafty + 22;
+                    var temps = temp.toString() + "px";
+                    var shotDiv = document.createElement("div");
+                    shotDiv.style.setProperty("width", "20px");
+                    shotDiv.style.setProperty("background-color", "#343434");
+                    shotDiv.style.setProperty("height", temps);
+                    shotDiv.style.setProperty("top", "25px")
+
+                    div1.appendChild(shotDiv);
+                    setTimeout(() => {
+                        shotDiv.remove();
+                    }, 15);
+
+
+                    idsArray.splice(indexInIds, 1)
+                    //console.log(idsArray);
+                    column1ids.shift();
+                    firstelement.remove();
+                    console.log("removed1");
+                    ++score;
+                } else {
+                    console.log("nothing to remove");
+                }
+            } else {
+                console.log("game not started");
+            }
+        }
+
+        function onClickColumn2() {
+            if (isGameLoopRunning == true) {
+                if (column2ids.length != 0) {
+                    var firstId = column2ids[0];
+                    var firstelement = document.getElementById(firstId);
+                    var indexInIds = idsArray.indexOf(firstId);
+
+                    //creating a new div here for the flashing animation
+                    var spacecrafty = document.getElementById("spacecraft2").getBoundingClientRect().y;
+                    var div1 = document.getElementById("column2astro");
+                    var temp = spacecrafty + 22;
+                    var temps = temp.toString() + "px";
+                    var shotDiv = document.createElement("div");
+                    shotDiv.style.setProperty("width", "20px");
+                    shotDiv.style.setProperty("background-color", "#343434");
+                    shotDiv.style.setProperty("height", temps);
+                    shotDiv.style.setProperty("top", "25px")
+
+                    div1.appendChild(shotDiv);
+                    setTimeout(() => {
+                        shotDiv.remove();
+                    }, 15);
+
+                    idsArray.splice(indexInIds, 1);
+                    //console.log(idsArray);
+                    column2ids.shift();
+                    firstelement.remove();
+                    console.log("removed2");
+                    ++score;
+                } else {
+                    console.log("nothing to remove");
+                }
+            } else {
+                console.log("game not started");
+            }
+        }
+
+        function onClickColumn3() {
+            if (isGameLoopRunning == true) {
+
+                if (column3ids.length != 0) {
+                    var firstId = column3ids[0];
+                    var firstelement = document.getElementById(firstId);
+                    var indexInIds = idsArray.indexOf(firstId);
+                    idsArray.splice(indexInIds, 1);
+
+                    //creating a new div here for the flashing animation
+                    var spacecrafty = document.getElementById("spacecraft3").getBoundingClientRect().y;
+                    var div1 = document.getElementById("column3astro");
+                    var temp = spacecrafty + 22;
+                    var temps = temp.toString() + "px";
+                    var shotDiv = document.createElement("div");
+                    shotDiv.style.setProperty("width", "20px");
+                    shotDiv.style.setProperty("background-color", "#343434");
+                    shotDiv.style.setProperty("height", temps);
+                    shotDiv.style.setProperty("top", "25px")
+
+                    div1.appendChild(shotDiv);
+                    setTimeout(() => {
+                        shotDiv.remove();
+                    }, 15);
+
+                    //console.log(idsArray);
+                    column3ids.shift();
+                    firstelement.remove();
+                    console.log("removed3");
+                    ++score;
+                } else {
+                    console.log("nothing to remove");
+                }
+            } else {
+                console.log("game not started");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

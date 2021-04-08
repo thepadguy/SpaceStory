@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        VisualSpace
+    </title>
+    <link rel="stylesheet" href="nametext.css">
+    <style>
+        body {
+            background-color: #c0c0c0;
+            overflow: hidden;
+        }
+    </style>
+    <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0">
+    <script>
+        function removeElement(id) {
+            document.getElementById(id).remove()
+        }
+        function clicked() {
+            document.getElementById('titleAndPlayDiv').classList.add('animatedTitlePlay');
+            document.getElementById("ByDiv").classList.add('animatedBy')
+            return 1;
+            //window.setTimeout(removeElement('titleAndPlayDiv'),30000);
+            //window.setTimeout(removeElement('ByDiv'), 30000)
+        }
+        function loadNewFrame() {
+            //result is just so that we have something to pass
+            //the clicked return value
+            //it doesn't have any use
+            window.location.href = "buttonshtml.html";
+        }
+        function changing() {
+            clicked();
+            setTimeout(() => {
+                loadNewFrame();
+            }, 3000);
+            }
+        window.onclick = changing;
+    </script>
+</head>
+
+<body id="bodyElement">
+    <div id="openingscreen">
+        <div class="wallLeft">
+        </div>
+        <div class="wallRight"></div>
+        <div class="item" id="titleAndPlayDiv">
+            <center>
+                <h1>VisualSpace</h1>
+            </center>
+            <center>
+                <p1 class="p1">Tap or click to play</p1>
+            </center>
+        </div>
+
+        <div class="by" id="ByDiv">
+            <center>
+                <p2 class="p2">
+                    By Pad
+                </p2>
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>
