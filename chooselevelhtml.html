@@ -64,7 +64,7 @@
             function analyze() {
                 var canvas = document.getElementById("imageCanvas");
                 var context = canvas.getContext('2d');
-                var imageData = context.getImageData(0,0,canvas.width, canvas.height);
+                var imageData = context.getImageData(0,0,canvas.width, canvas.height).data;
                 console.log(imageData);
             }
         }
