@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="nametext.css">
     <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <script>
+        var levelNum = 0;
         function makeButtonsLeave() {
             document.getElementById("sidebuttondiv").classList.add("sidebuttonsLeaveAnim");
             document.getElementById("levellistdiv").classList.add("levelListLeaveAnim");
@@ -43,130 +44,162 @@
                 case 1:
                     myImg.src = "images/resized1suntzu.png";
                     caption = "Art of War"
+                    levelNum = 1;
                     break;
                 case 2:
                     myImg.src = "images/resized2socrates.jpg";
                     caption = "Socratic Method";
+                    levelNum = 2;
                     break;
                 case 3:
                     myImg.src = "images/resized3alexanderthegreat.png";
                     caption = "King of the World";
+                    levelNum = 3;
                     break;
                 case 4:
                     myImg.src = "images/resized4juliusceasar.jpg";
                     caption = "The ides of March";
+                    levelNum = 4;
                     break;
                 case 5:
                     myImg.src = "images/resized5marcusaurelius.png";
                     caption = "Aurelius' Meditations";
+                    levelNum = 5;
                     break;
                 case 6:
                     myImg.src = "images/resized6williamtheconqueror.jpg";
                     caption = "Normans in England";
+                    levelNum = 6;
                     break;
                 case 7:
                     myImg.src = "images/resized7saladdin.jpg";
                     caption = "The lion's nemesis";
+                    levelNum = 7;
                     break;
                 case 8:
                     myImg.src = "images/resized8genghiskhan.jpg";
                     caption = "Khan of the Mongols";
+                    levelNum = 8;
                     break;
                 case 9:
                     myImg.src = "images/resized9akbar.jpg";
                     caption = "Expanding India";
+                    levelNum = 9;
                     break;
                 case 10:
                     myImg.src = "images/resized10olivercromwell.png";
                     caption = "Ruler of the Isles";
+                    levelNum = 10;
                     break;
                 case 11:
                     myImg.src = "images/resized11georgewashington.jpg";
                     caption = "Father of the States";
+                    levelNum = 11;
                     break;
                 case 12:
                     myImg.src = "images/resized12napoleonbonaparte.jpg";
                     caption = "Emperor of France";
+                    levelNum = 12;
                     break;
                 case 13:
                     myImg.src = "images/resized13abrahamlincoln.jpg";
                     caption = "Lincoln Memorial";
+                    levelNum = 13;
                     break;
                 case 14:
                     myImg.src = "images/resized14winstonchurchill.jpg";
                     caption = "Allied power";
+                    levelNum = 14;
                     break;
                 case 15:
                     myImg.src = "images/resized15franklindroosevelt.jpg";
                     caption = "New Deal";
+                    levelNum = 15;
                     break;
                 case 16:
                     myImg.src = "images/resized16hochiminh.jpg";
                     caption = "Founding 'nam";
+                    levelNum = 16;
                     break;
                 case 17:
                     myImg.src = "images/resized17margaretthatcher.png";
                     caption = "Iron Lady";
+                    levelNum = 17;
                     break;
                 case 18:
                     myImg.src = "images/resizedc1sargonofakkad.jpg";
                     caption = "King of Akkad";
+                    levelNum = 18;
                     break;
                 case 19:
                     myImg.src = "images/resizedc2leonidas.jpg";
                     caption = "Molon Labe";
+                    levelNum = 19;
                     break;
                 case 20:
                     myImg.src = "images/resizedc3hannibalbarca.jpg";
                     caption = "War Elephants";
+                    levelNum = 20;
                     break;
                 case 21:
                     myImg.src = "images/resizedc4scipioafricanus.jpg";
                     caption = "Battle of Zama";
+                    levelNum = 21;
                     break;
                 case 22:
                     myImg.src = "images/resizedc5sulla.jpeg";
                     caption = "Social War";
+                    levelNum = 22;
                     break;
                 case 23:
                     myImg.src = "images/resizedc6arminius.jpg";
                     caption = "Teutoberg Forest";
+                    levelNum = 23;
                     break;
                 case 24:
                     myImg.src = "images/resizedc7belisarius.jpg";
                     caption = "Justinian's right hand";
+                    levelNum = 24;
                     break;
                 case 25:
                     myImg.src = "images/resizedc8GustavusAdolphus.jpg";
                     caption = "Lion of the North";
+                    levelNum = 25;
                     break;
                 case 26:
                     myImg.src = "images/resizedc9frederickthegreat.jpg";
                     caption = "The Old Fritz";
+                    levelNum = 26;
                     break;
                 case 27:
                     myImg.src = "images/resizedc10shakazulu.jpg";
                     caption = "Zulu";
+                    levelNum = 27;
                     break;
                 case 28:
                     myImg.src = "images/resizedc11cochise.jpg";
                     caption = "Leader of the Apache";
+                    levelNum = 28;
                     break;
                 case 29:
                     myImg.src = "images/resizedc12paulvonlettowvorbeck.jpg";
                     caption = "The Lion of Africa ";
+                    levelNum = 29;
                     break;
                 case 30:
                     myImg.src = "images/resizedc13TELawrenceOfArabia.jpg";
                     caption = "Lawrence of Arabia";
+                    levelNum = 30;
                     break;
                 case 31:
                     myImg.src = "images/resizedc14DwightDEisenhower.jpg";
                     caption = "D-Day";
+                    levelNum = 31;
                     break;
                 case 32:
                     myImg.src = "images/resizedc15zhukov.jpg";
                     caption = "Hero of the Union";
+                    levelNum = 32;
                     break;
                 default:
                     break;
@@ -194,12 +227,12 @@
                 console.log(context.getImageData(0, 0, canvas.width, canvas.height).height);
             }
         }
-        function passParamsAndChangePage(num) {
+        function passParamsAndChangePage() {
             var modal = document.getElementById("startModal");
             modal.style.display = "none";
             makeButtonsLeave();
             setTimeout(() => {
-                window.location.href = "leveltemplatehtml.html?&level_id=" + num.toString();
+                window.location.href = "leveltemplatehtml.html?&level_id=" + levelNum.toString();
             }, 2000);
         }
         function onClickStartModalClose() {
@@ -225,7 +258,7 @@
 
                     </canvas>
                     <br>
-                    <button id="proceedbutton" class="abortButton" onclick="passParamsAndChangePage(1);">
+                    <button id="proceedbutton" class="abortButton" onclick="passParamsAndChangePage();">
                         Proceed
                     </button>
                 </center>
