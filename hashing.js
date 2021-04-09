@@ -106,7 +106,7 @@ var secondthird;
 var span;
 
 
-Jimp.read('SpaceStory/images/resized1suntzu.png').then(
+Jimp.read('SpaceStory/images/resizedc15zhukov.jpg').then(
     image => {
         var hash = image.hash();
         var hashed = sha256(hash);
