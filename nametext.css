@@ -63,6 +63,15 @@
     100%{bottom: 100vh;}
 }
 
+@keyframes makeInfoListAppear{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+
+@keyframes makeInfoListDisAppear{
+    0%{opacity:1;}
+    100%{opacity:0;}
+}
 
 div.item{
     left:0%;
@@ -611,4 +620,25 @@ button.abortButton:hover{
 
 div.moveSpaceCraftAreaAway {
     animation: moveSpaceCraftAreaAway 2s 1 linear forwards;
+}
+
+div.infoListDiv{
+    position:absolute;
+    top: 15%;
+    left: 2.6%;
+    text-align: center;
+    width: 94%;
+    margin: 0 0;
+    animation: makeInfoListAppear 2s 1 linear forwards;
+    overflow-y: scroll;
+    max-height: 70%;
+}
+div.infoListDivAnim{
+    animation: makeInfoListDisAppear 2s 1 linear forwards;
+}
+
+p.infoListElement{
+    font-family: 'PixelGosub';
+    color: black;
+    font-size: 20px;
 }

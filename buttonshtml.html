@@ -29,6 +29,12 @@
                 window.location.href = "chooselevelhtml.html";
             }, 2000);
         }
+        function onClickInfo() {
+            makeButtonsLeave();
+            setTimeout(() => {
+                window.location.href = "helpscreenhtml.html";
+            }, 2000);
+        }
     </script>
 </head>
 
@@ -52,7 +58,7 @@
                 help
             </button>
         </br>
-            <button class="sidebutton">
+            <button class="sidebutton" onclick="onClickInfo();">
                 info
             </button>
         </br>

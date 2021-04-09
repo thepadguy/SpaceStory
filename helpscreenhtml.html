@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        SpaceStory
+    </title>
+    <style>
+        body {
+            background-color: #c0c0c0;
+            overflow: hidden;
+        }
+
+        ol {
+            list-style-type: none;
+            margin-top: 0%;
+            overflow: auto;
+            max-height: 100%;
+            padding-inline-start: 0%;
+        }
+    </style>
+    <link rel="stylesheet" href="nametext.css">
+    <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <script>
+        function onBackClicked() {
+            document.getElementById("infolistdiv").classList.add("infoListDivAnim");
+            setTimeout(() => {
+                window.history.back(1);
+            }, 2100);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="helpscreen">
+        <div class="wallLeft">
+        </div>
+        <div class="wallRight">
+        </div>
+        <div id="sidebuttondiv" class="sideButtonsDiv">
+            <button class="sidebutton" onclick="onBackClicked();">
+                back
+            </button>
+        </div>
+        <div id="infolistdiv" class="infoListDiv">
+            <ol>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        Welcome to SpaceStory!
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        About the game
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        In SpaceStory you are controlling the weapons of three spacecrafts, as they venture in 32
+                        missions.
+                        <br>
+                        In every mission you have to destroy all 75 asteroids the asteroid field contains.
+                        <br>
+                        If you are playing with a keyboard you can use the buttons a,s,d to control the blaster shots.
+                        However,
+                        in order for the buttons to work, keyboard language should be English and CapsLock should be off
+                        (this means,
+                        no capitalized letters).
+                        <br>
+                        If you are playing with a touchscreen, you can tap the image of the spacecraft whose blaster you
+                        want to use,
+                        in order for it to shoot, or you can tap the column that the spacecraft is in. Double tap zoom
+                        is disabled
+                        when you are on the game screen for a better user experience.
+                        <br>
+                        Once all asteroids of a column are destroyed, the spacecraft of said column will no longer
+                        shoot.
+                        <br>
+                        If you are playing in landscape mode and you fail your mission, the "abort mission" message
+                        might appear
+                        behind the spacecrafts. This is to simply remind you how much better it is to play in portrait
+                        mode. If you switch
+                        to portrait mode, you should be easily able to click the "abort" button. If you are still not
+                        able to do so, just go
+                        to the previous page.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        The idea of the game
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        The idea behind the game was to be able to play something other than google's dinosaur game when
+                        you are bored
+                        and don't have that much time to do something interesting. Historical persons were added in
+                        order to make the game
+                        more interesting and to make it look better than some beginner pixel art project.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        Historical persons
+                        <br>
+                        (by Wikipedia)
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Sun Tzu (544BC - 496BC)
+                        <br>
+                        Sun Tzu was a Chinese general, military strategist, writer, and philosopher who lived in the
+                        Eastern Zhou period of ancient China.
+                        Sun Tzu is traditionally credited as the author of The Art of War, an influential work of
+                        military stratefy that has affected both
+                        Western and East Asian philosophy and military thinking. His works focus much more on
+                        alternatives to battle, such as stratagem, delay,
+                        the use of spies and alternative to war itself, the making and keeping of alliances, the uses of
+                        deceit, and a willingness to submit,
+                        at least temporarily, to more powerful foes.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Socrates (470BC-399BC)
+                        <br>
+                        Socrates was a Greek philospher from Athens who is credited as one of the founders of Western
+                        philosophy, and as being the first moral philosopher
+                        of the Western ethical tradition of thought. An enigmatic figure, he authored no texts, and is
+                        known chiefly through the accounts of classical writers
+                        composing after his lifetime, particularly his students Plato and Xenophon. Other sources
+                        include the contemporaneous Antisthenes, Aristippus, and Aeschines
+                        of Sphettos.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Alexander the Great (336BC-323BC)
+                        <br>
+                        Alexander III of Macedon commonly known as Alexander the Great, was a king of the ancient Greek
+                        kingdom of Macedon and a member of the Argead dynasty.
+                        He was born in Pella in 356 BC and succeeded his father Philip II to the throne at the age of
+                        20. He spent most of his ruling years on an unprecedented military
+                        campaign through Western Asia and Northeastern Africa, and by the age of thirty, he had created
+                        one of the largest empires in history, stretching from Greece to
+                        northwestern India. He was undefeated in battle and is widely considered one of history's most
+                        successful military commanders.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Julius Caesar (100BC-44BC)
+                        <br>
+                        Gaius Julius Caesar was a Roman general and statesman who played a critical role in the events
+                        that led to the demise of the Roman Republic and the rise of the Roman Empire.
+                        In 60 BC, Caesar, Crassus and Pompey formed the First Triumvirate, a political alliance that
+                        dominated Roman politics for several years. Their attempts to amass power as Populares
+                        were opposed by the Optimates within the Roman Senate, among them Cato the Younger with the
+                        frequent support of Cicero. Caesar rose to become one of the most powerful
+                        politicians in the Roman Republic through a string of military victories in the Gallic Wars,
+                        completed by 51BC, which greatly extended Roman territory. During this time he both
+                        invaded Britain and built a bridge across the Rhine river. These achievements and the support of
+                        his veteran army threatened to eclipse the standing of Pompey, who had himself
+                        realigned with the Senate after the death of Crassus in 53BC. With the Gallic Wars concluded,
+                        the Senate ordered Caesar to step down from his military command and return to Rome.
+                        Leaving his command in Gaul would mean losing his immunity to criminal prosecution by his
+                        enemies; knowing this, Caesar openly defied the Senate's authority by crossing the Rubicon
+                        and marching towards Rome at the head of an army. This began Caesar's civil war, which he won,
+                        leaving him in a position of near unchallenged power and influence.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Marcus Aurelius (121AD - 180AD)
+                        <br>
+                        Marcus Aurelius Antoninus was Roman emperor from 161 to 180 and a Stoic philosopher. He was the
+                        last of the rulers known as the Five Good Emperors
+                        and the last emperor of the Pax Romana, an age of relative peace and stability for the Roman
+                        Empire. He served as Roman consule in 140, 145 and 161.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        William the Conqueror (1035 - 1087)
+                        <br>
+                        Wiliam I, usually known as William the Conqueror, was the first Norman monarch of England,
+                        reigning from 1066 until his death in 1087. He was a descendant
+                        of Rollo and was Duke of Normandy from 1035 onward. By 1060, following a long struggle to
+                        establish his throne, his hold on Normandy was secure. In 1066,
+                        William invaded England, leading an army of Normans to victory over the Anglo-Saxon forces of
+                        Harold Godwinson at the Battle of Hastings,
+                        and suppressed subsequent English revolts in what has become known as the Norman Conquest. The
+                        rest of his life was marked by struggles to consolidate
+                        his hold over England and his continental lands, and by difficulties with his eldest son, Robert
+                        Curthose.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Saladin (1137-1193)
+                        <br>
+                        Al-Nasir Salah al-Din Yusuf ibn Ayyub, better known as Salah ad-Din or Saladin, was a Sunni
+                        Muslim Kurd and the first sultan of Egypt and Syria
+                        and founder of the Ayyubid dynasty. Saladin led the Muslim military campaign against the
+                        Crusader states in the Levant. At the height of his power, his
+                        sultanate spanned Egypt, Syria, the Jazira, the Hejaz, Yemen, parts of western North Africa, and
+                        Nubia.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Genghis Khan (1155/1162 - 1227)
+                        <br>
+                        Genghis Khan, was the founder and first Great Khan (Emperor) of the Mongol Empire, which became
+                        the largest contiguous empire in history after his death. He came to power by uniting many of
+                        the nomadic tribes of Northeast Asia. After founding the Empire and being proclaimed Genghis
+                        Khan he launched the Mongol invasions that conquered most of Eurasia, reaching as far west as
+                        Poland in Europe and the Levant in the Middle East. Campaigns initiated in his lifetime include
+                        those against the Qara Khitai, Khwarezmia, and the Western Xia and Jin dynasties, and raids into
+                        Medieval Georgia, the Kievan Rus', and Volga Bulgaria. These campaigns were often accompanied by
+                        large-scale massacres of the civilian populations, especially in the Khwarazmian and Western
+                        Xia-controlled lands. Because of this brutality, which left millions dead, he is considered by
+                        many to have been a brutal ruler. By the end of his life, the Mongol Empire occupied a
+                        substantial portion of Central Asia and China. Due to his exceptional military successes,
+                        Genghis Khan is often considered to be one of the greatest conquerors of all time.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Akbar (1542-1605)
+                        <br>
+                        Abu'l-Fath Jalal-ud-din Muhammad Akbar popularly known as Akbar the Great, was the third Mughal
+                        emperor, who reigned from 1556 to 1605. Akbar succeeded his father, Humayun, under a regent,
+                        Bairam Khan, who helped the young emperor expand and consolidate Mughal domains in India.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Oliver Cromwell (1599-1658)
+                        <br>
+                        Oliver Cromwell was an English general and statesman who, first as a subordinate and later as
+                        Commander-in-Chief, led armies of the Parliament of England against King Charles I during the
+                        English Civil War, subsequently ruling the British Isles as Lord Protector from 1653 until his
+                        death in 1658. He acted simultaneously as head of state and head of government of the new
+                        republican commonwealth.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        George Washington (1732-1799)
+                        <br>
+                        George Washington was an American political leader, military general, statesman, and Founding
+                        Father who served as the first president of the United States from 1789 to 1797. Previously, he
+                        led Patriot forces to victory in the nation's War for Independence. He presided at the
+                        Constitutional Convention of 1787, which established the U.S. Constitution and a federal
+                        government. Washington has been called the "Father of His Country" for his manifold leadership
+                        in the formative days of the new nation.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Napoleon Bonaparte (1769-1821)
+                        <br>
+                        Napoleon Bonaparte was a French military and political leader. He rose to prominence during the
+                        French Revolution and led several successful campaigns during the Revolutionary Wars. As
+                        Napoleon I, he was Emperor of the French from 1804 until 1814, and again in 1815. Napoleon
+                        dominated European and global affairs for more than a decade while leading France against a
+                        series of coalitions in the Napoleonic Wars. He won most of these wars and the vast majority of
+                        his battles, building a large empire that ruled over continental Europe before its final
+                        collapse in 1815. One of the greatest commanders in history, his wars and campaigns are studied
+                        at military schools worldwide. He remains one of the most celebrated and controversial political
+                        figures in human history.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Abraham Lincoln (1809-1865)
+                        <br>
+                        Abraham Lincoln was an American statesman and lawyer who served as the 16th president of the
+                        United States from 1861 until his assassination in 1865. Lincoln led the nation through the
+                        American Civil War, the country's greatest moral, cultural, constitutional, and political
+                        crisis. He succeeded in preserving the Union, abolishing slavery, bolstering the federal
+                        government, and modernizing the U.S. economy.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Winston Churchill (1874-1965)
+                        <br>
+                        Sir Winston Leonard Spencer Churchill was the Prime Minister of the United Kingdom from 1940 to
+                        1945, during the Second World War, and again from 1951 to 1955. Apart from two years between
+                        1922 and 1924, Churchill was a Member of Parliament (MP) from 1900 to 1964 and represented a
+                        total of five constituencies. Ideologically an economic liberal and imperialist, he was for most
+                        of his career a member of the Conservative Party, as leader from 1940 to 1955. He was a member
+                        of the Liberal Party from 1904 to 1924. Churchill was also well known for his military career
+                        and as a historian, painter and writer, and among his many awards was the Nobel Prize in
+                        Literature.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Franklin D Roosevelt (1882 - 1945)
+                        <br>
+                        Franklin Delano Roosevelt often referred to by his initials FDR, was an American politician who
+                        served as the 32nd president of the United States from 1933 until his death in 1945. A member of
+                        the Democratic Party, he won a record four presidential elections and became a central figure in
+                        world events during the first half of the 20th century. Roosevelt directed the federal
+                        government during most of the Great Depression, implementing his New Deal domestic agenda in
+                        response to the worst economic crisis in U.S. history. As a dominant leader of his party, he
+                        built the New Deal Coalition, which defined modern liberalism in the United States throughout
+                        the middle third of the 20th century. His third and fourth terms were dominated by World War II,
+                        which ended shortly after he died in office.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Ho Chi Minh (1890 - 1969)
+                        <br>
+                        Ho Chi Minh was a Vietnamese revolutionary and politician. He served as Prime Minister of North
+                        Vietnam from 1945 to 1955 and President from 1945 until his death in 1969. Ideologically a
+                        Marxist–Leninist, he served as Chairman and First Secretary of the Workers' Party of Vietnam.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Margaret Thatcher (1925 - 2013)
+                        <br>
+                        Margaret Hilda Thatcher, Baroness Thatcher, was a British stateswoman who served as Prime
+                        Minister of the United Kingdom from 1979 to 1990 and Leader of the Conservative Party from 1975
+                        to 1990. She was the longest-serving British prime minister of the 20th century and the first
+                        woman to hold that office. A Soviet journalist dubbed her the "Iron Lady", a nickname that
+                        became associated with her uncompromising politics and leadership style. As prime minister, she
+                        implemented policies that became known as Thatcherism.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Sargon of Akkad (2334BC - 2284BC)
+                        <br>
+                        Sargon of Akkad, also known as Sargon the Great, was the first ruler of the Akkadian Empire,
+                        known for his conquests of the Sumerian city-states in the 24th to 23rd centuries BC. He is
+                        sometimes identified as the first person in recorded history to rule over an empire.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Leonidas (540BC - 480BC)
+                        <br>
+                        Leonidas I was a king of the Greek city-state of Sparta, and the 17th of the Agiad line, a
+                        dynasty which claimed descent from the mythological demigod Heracles and Cadmus. Leonidas I was
+                        son of King Anaxandridas II. He succeeded his half-brother King Cleomenes I to the throne in c.
+                        489 BC. His co-ruler was King Leotychidas. He was succeeded by his son, King Pleistarchus.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Hannibal Barca (274BC - 183/181BC)
+                        <br>
+                        Hannibal was a Carthaginian general and statesman who commanded Carthage's main forces against
+                        the Roman Republic during the Second Punic War. He is widely considered one of the greatest
+                        military commanders in human history. His father, Hamilcar Barca, was a leading Carthaginian
+                        commander during the First Punic War. His younger brothers were Mago and Hasdrubal, and he was
+                        brother-in-law to Hasdrubal the Fair, who also commanded Carthaginian armies.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Scipio Africanus (236/235BC - 183BC)
+                        <br>
+                        Publius Cornelius Scipio Africanus was a Roman general and later consul who is often regarded as
+                        one of the best military commanders and strategists of all time. His main achievements were
+                        during the Second Punic War. His greatest military achievement was the defeat of Hannibal at the
+                        Battle of Zama (near modern Zama, Tunisia) in 202 BC. The victory was one of the feats that
+                        earned him the agnomen he is best known for: Africanus.
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Lucius Cornelius Sulla (138BC - 78BC)
+                        <br>
+                        Lucius Cornelius Sulla Felix commonly known as Sulla, was a Roman general and statesman who won
+                        the first large-scale civil war in Roman history, and became the first man of the republic to
+                        seize power through force. He had the distinction of holding the office of consul twice, as well
+                        as reviving the dictatorship. Sulla was a gifted and innovative general, achieving numerous
+                        successes in wars against different opponents, both foreign and domestic. Sulla rose to
+                        prominence during the war against the Numidian king Jugurtha, whom he captured as a result of
+                        Jugurtha's betrayal by the king's allies, although his superior Gaius Marius took credit for
+                        ending the war. He then fought successfully against Germanic tribes during the Cimbrian War, and
+                        Italic tribes during the Social War. He was awarded the Grass Crown for his command in the
+                        latter war.
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>
