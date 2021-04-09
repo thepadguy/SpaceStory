@@ -21,21 +21,6 @@
     <link rel="stylesheet" href="nametext.css">
     <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <script>
-        /*var isModalUp = false;
-        function possiblyCloseModal() {
-            if (isModalUp == true) {
-                var modal = document.getElementById("startModal");
-                modal.style.display="none";
-                isModalUp = false;
-            } else {
-                console.log("modal is not up");
-            }
-        }
-        
-        window.onclick = function() {
-            possiblyCloseModal();
-        }
-        */
         function makeButtonsLeave() {
             document.getElementById("sidebuttondiv").classList.add("sidebuttonsLeaveAnim");
             document.getElementById("levellistdiv").classList.add("levelListLeaveAnim");
@@ -56,8 +41,8 @@
             var context = document.getElementById('imageCanvas').getContext('2d');
             switch (num) {
                 case 1:
-                    myImg.src = "images/image1.jpg";
-                    caption = "Minoan Spring - 1550-1500 B.C."
+                    myImg.src = "images/resized1suntzu.png";
+                    caption = "SUN TZU"
                     break;
 
                 default:
@@ -70,7 +55,7 @@
             function draw() {
                 var canvas = document.getElementById("imageCanvas");
                 var captionpar = document.getElementById("imageCaption");
-                captionpar.innerHTML = "Map name: " + caption;
+                captionpar.innerHTML = "Mission name: " + caption;
                 canvas.setAttribute("width", myImg.width.toString());
                 canvas.setAttribute("height", myImg.height.toString());
                 context.drawImage(myImg, 0, 0);
@@ -93,7 +78,7 @@
             setTimeout(() => {
                 switch (num) {
                     case 1:
-                        window.location.href = "leveltemplatehtml.html?&level_id=1&level_name=map1";
+                        window.location.href = "leveltemplatehtml.html?&level_id="+num.toString();
                         break;
 
                     default:

@@ -13,21 +13,36 @@
         }
     </style>
     <link rel="stylesheet" href="nametext.css">
-    <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport"
+        contet="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
     <script>
         var astroColsArray = [];
-        astroColsArray = [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2];
+        //astroColsArray = [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2];
         var idsArray = [];
         var column1ids = [];
         var column2ids = [];
         var column3ids = [];
         var score = 0;
         var url = window.location.href;
-        var urlSearcher  = new URLSearchParams(url);
-        var mapName = urlSearcher.get("level_name");
+        var urlSearcher = new URLSearchParams(url);
+        //var mapName = urlSearcher.get("level_name");
         var levelId = urlSearcher.get("level_id");
-        console.log(mapName);
+        //console.log(mapName);
         console.log(levelId);
+        switch (levelId) {
+            case 1:
+                astroColsArray = [2, 1, 2, 1, 1, 2, 1, 1, 1, 0, 2, 0,
+                    2, 1, 2, 2, 1, 2, 0, 2, 0, 2, 2, 0,
+                    1, 2, 1, 0, 1, 0, 0, 2, 1, 1, 1, 1,
+                    0, 0, 2, 1, 2, 0, 2, 1, 1, 0, 0, 1,
+                    1, 2, 2, 0, 0, 1, 0, 1, 1, 0, 0, 0,
+                    2, 0, 0, 0, 2, 1, 0, 1, 2, 1, 2, 1,
+                    2, 0, 2];
+                break;
+
+            default:
+                break;
+        }
     </script>
 </head>
 
@@ -47,8 +62,9 @@
                         <br>
                         Waiting for perimission to start travelling.
                     </p>
-                    <button id="finishbutton" class="abortButton" onclick="closeFinishModalAndQuit();" style="touch-action: manipulation;">
-                    Grant permission
+                    <button id="finishbutton" class="abortButton" onclick="closeFinishModalAndQuit();"
+                        style="touch-action: manipulation;">
+                        Grant permission
                     </button>
                 </center>
             </div>
@@ -63,7 +79,8 @@
                         <br>
                         Waiting for permission to proceed.
                     </p>
-                    <button id="proceedbutton" class="abortButton" onclick="closeModalAndStartGame();" style="touch-action: manipulation;">
+                    <button id="proceedbutton" class="abortButton" onclick="closeModalAndStartGame();"
+                        style="touch-action: manipulation;">
                         Proceed
                     </button>
                 </center>
@@ -81,9 +98,10 @@
                         <br>
                         Aborting mission.
                         <br>
-                        Asteroids destroyed: 
+                        Asteroids destroyed:
                     </p>
-                    <button id="abortbutton" class="abortButton" onclick="closeModalOnClickAndChangePage()" style="touch-action: manipulation;">
+                    <button id="abortbutton" class="abortButton" onclick="closeModalOnClickAndChangePage()"
+                        style="touch-action: manipulation;">
                         Abort mission
                     </button>
                 </center>
@@ -91,11 +109,14 @@
         </div>
         <div id="gamearea" class="gameArea" style="touch-action: manipulation;">
             <div id="astroidarea" class="astroidArea" style="touch-action: manipulation;">
-                <div id="column1astro" class="column1Astro" onclick="onClickColumn1();" style="touch-action: manipulation;">
+                <div id="column1astro" class="column1Astro" onclick="onClickColumn1();"
+                    style="touch-action: manipulation;">
                 </div>
-                <div id="column2astro" class="column2Astro" onclick="onClickColumn2();" style="touch-action: manipulation;">
+                <div id="column2astro" class="column2Astro" onclick="onClickColumn2();"
+                    style="touch-action: manipulation;">
                 </div>
-                <div id="column3astro" class="column3Astro" onclick="onClickColumn3();" style="touch-action: manipulation;">
+                <div id="column3astro" class="column3Astro" onclick="onClickColumn3();"
+                    style="touch-action: manipulation;">
                 </div>
                 <script>
                     //create the boxes
@@ -326,12 +347,12 @@
             if (idsArray.length == 0) {
                 shouldIntervalRun1 = false;
                 isGameLoopRunning = false;
-                if(shouldFinishModalAppear == true) {
+                if (shouldFinishModalAppear == true) {
                     setTimeout(() => {
-                        console.log(score.toString()+"/"+astroColsArray.length.toString());
+                        console.log(score.toString() + "/" + astroColsArray.length.toString());
                         makeFinishModalAppear();
                     }, 400);
-                
+
                 }
                 //clearInterval(drawer);
                 return false;
@@ -354,7 +375,7 @@
                     shouldIntervalRun1 = false;
                     isGameLoopRunning = false;
                     console.log(isGameLoopRunning);
-                    console.log(score.toString()+"/"+astroColsArray.length.toString());
+                    console.log(score.toString() + "/" + astroColsArray.length.toString());
                     makeModalAppear();
                     //clearInterval(drawer);
                     return false;
@@ -473,7 +494,7 @@
             modalParent.style.visibility = "visible;"
             modalParent.style.zIndex = "999"
             modalParent.style.display = "block";*/
-            document.getElementById("modal-paragraph1").innerHTML = document.getElementById("modal-paragraph1").innerHTML+ (score.toString()+"/"+astroColsArray.length.toString());
+            document.getElementById("modal-paragraph1").innerHTML = document.getElementById("modal-paragraph1").innerHTML + (score.toString() + "/" + astroColsArray.length.toString());
             modal.style.display = "block";
         }
 
@@ -488,7 +509,7 @@
             setTimeout(() => {
                 intervalThingy(shouldIntervalRun1, shouldIRun1);
             }, 400);
-            
+
         }
 
         function makeFinishModalAppear() {
@@ -498,7 +519,7 @@
 
         function closeFinishModalAndQuit() {
             var modal = document.getElementById("finishedModal");
-            modal.style.display="none";
+            modal.style.display = "none";
             modal.remove();
             shouldFinishModalAppear = false;
             setTimeout(() => {
@@ -508,7 +529,7 @@
             setTimeout(() => {
                 window.history.back(1);
             }, 2500);
-            
+
         }
 
         function onClickColumn1() {
