@@ -42,9 +42,132 @@
             switch (num) {
                 case 1:
                     myImg.src = "images/resized1suntzu.png";
-                    caption = "SUN TZU"
+                    caption = "Art of War"
                     break;
-
+                case 2:
+                    myImg.src = "images/resized2socrates.jpg";
+                    caption = "Socratic Method";
+                    break;
+                case 3:
+                    myImg.src = "images/resized3alexanderthegreat.png";
+                    caption = "King of the World";
+                    break;
+                case 4:
+                    myImg.src = "images/resized4juliusceasar.jpg";
+                    caption = "The ides of March";
+                    break;
+                case 5:
+                    myImg.src = "images/resized5marcusaurelius.png";
+                    caption = "Aurelius' Meditations";
+                    break;
+                case 6:
+                    myImg.src = "images/resized6williamtheconqueror.jpg";
+                    caption = "Normans in England";
+                    break;
+                case 7:
+                    myImg.src = "images/resized7saladdin.jpg";
+                    caption = "The lion's nemesis";
+                    break;
+                case 8:
+                    myImg.src = "images/resized8genghiskhan.jpg";
+                    caption = "Khan of the Mongols";
+                    break;
+                case 9:
+                    myImg.src = "images/resized9akbar.jpg";
+                    caption = "Expanding India";
+                    break;
+                case 10:
+                    myImg.src = "images/resized10olivercromwell.png";
+                    caption = "Ruler of the Isles";
+                    break;
+                case 11:
+                    myImg.src = "images/resized11georgewashington.jpg";
+                    caption = "Father of the States";
+                    break;
+                case 12:
+                    myImg.src = "images/resized12napoleonbonaparte.jpg";
+                    caption = "Emperor of France";
+                    break;
+                case 13:
+                    myImg.src = "images/resized13abrahamlincoln.jpg";
+                    caption = "Lincoln Memorial";
+                    break;
+                case 14:
+                    myImg.src = "images/resized14winstonchurchill.jpg";
+                    caption = "Allied power";
+                    break;
+                case 15:
+                    myImg.src = "images/resized15franklindroosevelt.jpg";
+                    caption = "New Deal";
+                    break;
+                case 16:
+                    myImg.src = "images/resized16hochiminh.jpg";
+                    caption = "Founding 'nam";
+                    break;
+                case 17:
+                    myImg.src = "images/resized17margaretthatcher.png";
+                    caption = "Iron Lady";
+                    break;
+                case 18:
+                    myImg.src = "images/resizedc1sargonofakkad.jpg";
+                    caption = "King of Akkad";
+                    break;
+                case 19:
+                    myImg.src = "images/resizedc2leonidas.jpg";
+                    caption = "Molon Labe";
+                    break;
+                case 20:
+                    myImg.src = "images/resizedc3hannibalbarca.jpg";
+                    caption = "War Elephants";
+                    break;
+                case 21:
+                    myImg.src = "images/resizedc4scipioafricanus.jpg";
+                    caption = "Battle of Zama";
+                    break;
+                case 22:
+                    myImg.src = "images/resizedc5sulla.jpeg";
+                    caption = "Social War";
+                    break;
+                case 23:
+                    myImg.src = "images/resizedc6arminius.jpg";
+                    caption = "Teutoberg Forest";
+                    break;
+                case 24:
+                    myImg.src = "images/resizedc7belisarius.jpg";
+                    caption = "Justinian's right hand";
+                    break;
+                case 25:
+                    myImg.src = "images/resizedc8GustavusAdolphus.jpg";
+                    caption = "Lion of the North";
+                    break;
+                case 26:
+                    myImg.src = "images/resizedc9frederickthegreat.jpg";
+                    caption = "The Old Fritz";
+                    break;
+                case 27:
+                    myImg.src = "images/resizedc10shakazulu.jpg";
+                    caption = "Zulu";
+                    break;
+                case 28:
+                    myImg.src = "images/resizedc11cochise.jpg";
+                    caption = "Leader of the Apache";
+                    break;
+                case 29:
+                    myImg.src = "images/resizedc12paulvonlettowvorbeck.jpg";
+                    caption = "The Lion of Africa ";
+                    break;
+                case 30:
+                    myImg.src = "images/resizedc13TELawrenceOfArabia.jpg";
+                    caption = "Lawrence of Arabia";
+                    break;
+                case 31:
+                    myImg.src = "images/resizedc14DwightDEisenhower.jpg";
+                    caption = "D-Day";
+                    break;
+                case 32:
+                    myImg.src = "images/resizedc15zhukov.jpg";
+                    caption = "Hero of the Union";
+                    break;
                 default:
                     break;
             }
@@ -65,10 +188,10 @@
             function analyze() {
                 var canvas = document.getElementById("imageCanvas");
                 var context = canvas.getContext('2d');
-                var imageData = context.getImageData(0,0,canvas.width, canvas.height).data;
+                var imageData = context.getImageData(0, 0, canvas.width, canvas.height).data;
                 console.log(imageData);
-                console.log(context.getImageData(0,0,canvas.width,canvas.height).width);
-                console.log(context.getImageData(0,0,canvas.width,canvas.height).height);
+                console.log(context.getImageData(0, 0, canvas.width, canvas.height).width);
+                console.log(context.getImageData(0, 0, canvas.width, canvas.height).height);
             }
         }
         function passParamsAndChangePage(num) {
@@ -76,15 +199,7 @@
             modal.style.display = "none";
             makeButtonsLeave();
             setTimeout(() => {
-                switch (num) {
-                    case 1:
-                        window.location.href = "leveltemplatehtml.html?&level_id="+num.toString();
-                        break;
-
-                    default:
-                        break;
-                }
-
+                window.location.href = "leveltemplatehtml.html?&level_id=" + num.toString();
             }, 2000);
         }
         function onClickStartModalClose() {
@@ -125,77 +240,172 @@
             <ol>
                 <li class="levelListItem">
                     <p class="levelListHeader">
-                        Classics
+                        Influential people
                     </p>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton" onclick="onLevelButtonClicked(1);">
-                        Level 1: Armanen
+                        Mission 1: Sun Tzu
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 2: Socrates
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 3: Alexander the Great
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 4: Julius Ceasar
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 5: Marcus Aurelius
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 6: William the Conqueror
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 7: Saladin
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 8: Genghis Khan
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 9: Akbar
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 10: Oliver Cromwell
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 11: Goerge Washington
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 12: Napoleon Bonaparte
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 13: Abraham Lincoln
                     </button>
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton">
-                        Level 2: Shape of Lies - Eternal Eclipse
+                        Mission 14: Winston Churchill
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 15: Franklin D. Roosevelt
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 16: Ho Chi Minh
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 17: Margaret Thatcher
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        Commanders
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 18: Sargon Of Akkad
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 19: Leonidas
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 20: Hannibal Barca
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 21: Scipio Africanus
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 22: Lucius Corenllius Sulla
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 23: Arminius
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 24: Flavius Belisarius
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 25: Gustavus Adolphus
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 26: Frederick the Great
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 27: Shaka Zulu
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 28: Cochise
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 29: Paul von Lettow-Vorbeck
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 30: T.E. Lawrence (of Arabia)
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 31: Dwight D. Eisenhower
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton">
+                        Mission 32: Georgy Zhukov
                     </button>
                 </li>
         </div>
