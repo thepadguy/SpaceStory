@@ -607,10 +607,17 @@
         var shouldIntervalRun1 = true;
         var isGameLoopRunning = false;
         var shouldFinishModalAppear = true;
+        var spacecrafttop;
+        var spacecraftmiddle;
+        var toIncrement;
         //must be at least 2000sec because we have to wait for animation to finish
         setTimeout(() => {
             //just declaring some vars
             makeStartModalAppear();
+            spacecrafttop = document.getElementById("spacecraft1").getBoundingClientRect().top;
+            spacecraftmiddle = spacecrafttop + 22;
+            toIncrement = spacecraftmiddle/268.8515;
+            console.log(toIncrement)
             //intervalThingy(shouldIntervalRun1, shouldIRun1);
             /*
             FOR DEBUGGING PURPOSES
@@ -650,11 +657,14 @@
             }
         }
 
-        function incrementTop(id) {
+        function incrementTop(id, incrementBy) {
+            
+            
             var topValue = document.getElementById(id).style.top;
             var topValueint = parseInt(topValue);
-            var newTopValueint = topValueint + 0.7*((2*window.innerHeight)/537);
+            var newTopValueint = topValueint + incrementBy;
             var newTopString = newTopValueint.toString() + "px;";
+            //console.log(newTopString)
             document.getElementById(id).style = "";
             document.getElementById(id).style = "top: " + newTopString;
             //console.log(document.getElementById(id).style.top);
@@ -718,7 +728,7 @@
                     //clearInterval(drawer);
                     return false;
                 }
-                incrementTop(id);
+                incrementTop(id, toIncrement);
             }
             return true;
         }
