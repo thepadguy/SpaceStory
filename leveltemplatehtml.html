@@ -943,8 +943,14 @@
         }
 
         function EndProcedures() {
-            for(const id of idsArray) {
-                document.getElementById(id).stop();
+            for(const animid of animationIds) {
+                try {
+                    animid.pause();
+                } catch (error) {
+                    console.log(error)
+                } finally {
+                    continue;
+                }
             }
         }
 
