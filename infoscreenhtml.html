@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        SpaceStory
+    </title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <style>
+        body {
+            background-color: #c0c0c0;
+            overflow: hidden;
+        }
+
+        ol {
+            list-style-type: none;
+            margin-top: 0%;
+            overflow: auto;
+            max-height: 100%;
+            padding-inline-start: 0%;
+        }
+    </style>
+    <link rel="stylesheet" href="nametext.css">
+    <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <script>
+        function onBackClicked() {
+            var startVal = 1;
+            var finishVal = 0;
+            document.getElementById("helplistdiv").animate([
+                { opacity: startVal },
+                { opacity: finishVal }
+            ], {
+                duration: 2000,
+                iterations: 1,
+                direction: 'normal',
+                easing: 'linear',
+                fill: 'forwards'
+            }
+            );
+            setTimeout(() => {
+                window.history.back(1);
+            }, 2100);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="infolist">
+        <div class="wallLeft">
+        </div>
+        <div class="wallRight">
+        </div>
+        <div id="sidebuttondiv" class="sideButtonsDiv">
+            <button class="sidebutton" onclick="onBackClicked();">
+                back
+            </button>
+        </div>
+        <div id="helplistdiv" class="infoListDiv">
+            <ol>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        INFO
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        Developed by: Pad (with the help of God)
+                        <br>
+                        Development started: 29/3/2021
+                        <br>
+                        Development ended: 10/4/2021
+                        <br>
+                        Version: 1.0
+                        <br>
+                        Languages used: HTML5, CSS3, JavaScript
+                        <br>
+                        External libraries used: Jimp (JavaScript library, it is used only in hashing.js, which is not
+                        needed when the game is run)
+                        <br>
+                        Font: Pixel Gosub
+                        <br>
+                        Software used: Visual Studio Code 1.55.1, Vivaldi browser 3.6
+                        <br>
+                        Tested and debugged on: Vivaldi browser 3.6, Vivaldi browser (android) 3.7.2221.31, Microsoft Edge browser, Acer Aspire
+                        3 (Windows 10), Xiaomi Redmi 9C
+                        <br>
+                        Github: https://github.com/thepadguy/SpaceStory
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        About the file structure
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <p class="infoListElement">
+                        All images are contained in the images folder and fonts folder. The .nojekyll file exists so
+                        that the github page is built properly. The empty.txt files in some directories are there
+                        because these directories were created from github webpage and as I know in order to create a
+                        directory there you have to put some files into it.
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

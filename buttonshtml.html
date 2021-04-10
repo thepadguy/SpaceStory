@@ -5,6 +5,7 @@
     <title>
         SpaceStory
     </title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <link rel="stylesheet" href="nametext.css">
     <style>
         body {
@@ -35,6 +36,12 @@
                 window.location.href = "helpscreenhtml.html";
             }, 2000);
         }
+        function onHelpClick() {
+            makeButtonsLeave();
+            setTimeout(() => {
+                window.location.href = "infoscreenhtml.html"
+            }, 2000);
+        }
     </script>
 </head>
 
@@ -54,7 +61,7 @@
             </button-->
         </div>
         <div id="sidebuttons" class="sideButtonsDiv">
-            <button class="sidebutton">
+            <button class="sidebutton" onclick="onHelpClick();">
                 help
             </button>
         </br>
