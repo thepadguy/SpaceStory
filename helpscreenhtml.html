@@ -23,7 +23,19 @@
     <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <script>
         function onBackClicked() {
-            document.getElementById("infolistdiv").classList.add("infoListDivAnim");
+            var startVal = 1;
+            var finishVal = 0;
+            document.getElementById("infolistdiv").animate([
+                {opacity: startVal},
+                {opacity: finishVal}
+            ], {
+                duration: 2000,
+                iterations: 1,
+                direction: 'normal',
+                easing: 'linear',
+                fill: 'forwards'
+            }
+            );
             setTimeout(() => {
                 window.history.back(1);
             }, 2100);

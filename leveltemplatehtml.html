@@ -475,28 +475,12 @@
                             var topCoords = topCoord.toString();
                             el.setAttribute("style", "top: " + topCoords + "px;");
 
-                            //creating spacer1
-                            var sp1 = document.createElement("div");
-                            var id1 = "spacera" + counters;
-                            sp1.setAttribute("id", id1);
-                            sp1.classList.add("spacerClass");
-                            sp1.setAttribute("style", "top: " + topCoords + "px;");
 
-                            //creating spacer2
-                            var sp2 = document.createElement("div");
-                            var id2 = "spacerb" + counters;
-                            sp2.setAttribute("id", id2);
-                            sp2.classList.add("spacerClass");
-                            sp2.setAttribute("style", "top: " + topCoords + "px;");
 
                             ++counter;
                             astroDiv1.appendChild(el);
-                            //astroDiv2.appendChild(sp1);
-                            //astroDiv3.appendChild(sp2);
                             idsArray.push(id);
                             column1ids.push(id);
-                            //idsArray.push(id1);
-                            //idsArray.push(id2);
                         } else if (num == 1) {
                             //creating element
                             var el = document.createElement("div");
@@ -509,28 +493,13 @@
                             var topCoords = topCoord.toString();
                             el.setAttribute("style", "top: " + topCoords + "px;");
 
-                            //creating spacer1
-                            var sp1 = document.createElement("div");
-                            var id1 = "spacera" + counters;
-                            sp1.setAttribute("id", id1);
-                            sp1.classList.add("spacerClass");
-                            sp1.setAttribute("style", "top: " + topCoords + "px;");
 
-                            //creating spacer2
-                            var sp2 = document.createElement("div");
-                            var id2 = "spacerb" + counters;
-                            sp2.setAttribute("id", id2);
-                            sp2.classList.add("spacerClass");
-                            sp2.setAttribute("style", "top: " + topCoords + "px;");
 
                             ++counter;
-                            //astroDiv1.appendChild(sp1);
                             astroDiv2.appendChild(el);
-                            //astroDiv3.appendChild(sp2);
                             idsArray.push(id);
                             column2ids.push(id);
-                            //idsArray.push(id1);
-                            //idsArray.push(id2);
+
                         } else if (num == 2) {
                             //creating element
                             var el = document.createElement("div");
@@ -543,28 +512,12 @@
                             var topCoords = topCoord.toString();
                             el.setAttribute("style", "top: " + topCoords + "px;");
 
-                            //creating spacer1
-                            var sp1 = document.createElement("div");
-                            var id1 = "spacera" + counters;
-                            sp1.setAttribute("id", id1);
-                            sp1.classList.add("spacerClass");
-                            sp1.setAttribute("style", "top: " + topCoords + "px;");
-
-                            //creating spacer2
-                            var sp2 = document.createElement("div");
-                            var id2 = "spacerb" + counters;
-                            sp2.setAttribute("id", id2);
-                            sp2.classList.add("spacerClass");
-                            sp2.setAttribute("style", "top: " + topCoords + "px;");
 
                             ++counter;
-                            // astroDiv1.appendChild(sp1);
-                            // astroDiv2.appendChild(sp2);
                             astroDiv3.appendChild(el);
                             idsArray.push(id);
                             column3ids.push(id);
-                            // idsArray.push(id1);
-                            // idsArray.push(id2);
+
                         }
                     }
                 </script>
@@ -644,50 +597,25 @@
         }
 
         function intervalThingy(intervalFlag, innerFlag) {
-            isGameLoopRunning = true;
             var flagin = true;
             if (intervalFlag == true) {
                 var drawer = setInterval(() => {
-                    flagin = incrementTopForEveryElement();
+                    flagin = doesItCollide();
                     //console.log(flagin);
                     if (flagin == false) {
+                        for (const id of idsArray) {
+                            document.getElementById(id).stop();
+                        }
+                        setTimeout(() => {
+                            makeFinishModalAppear();
+                        }, 400);
                         clearInterval(drawer);
                     }
-                }, 10);
+                }, 5);
             }
         }
 
-        function incrementTop(id, incrementBy) {
-            
-            
-            var topValue = document.getElementById(id).style.top;
-            var topValueint = parseInt(topValue);
-            var newTopValueint = topValueint + incrementBy;
-            var newTopString = newTopValueint.toString() + "px;";
-            //console.log(newTopString)
-            document.getElementById(id).style = "";
-            document.getElementById(id).style = "top: " + newTopString;
-            //console.log(document.getElementById(id).style.top);
-        }
 
-        function shouldIIncrement() {
-            var lastId = idsArray[idsArray.length - 1];
-            var lastEl = document.getElementById(lastId);
-            var lastTop = lastEl.style.top;
-            var lastTopInt = parseInt(lastTop);
-            if (lastTopInt > window.innerHeight) {
-                //stop
-                return 1;
-            } else {
-                //don't stop
-                return 0;
-            }
-        }
-
-        function testAlertOne() {
-            alert("collision occured");
-            clearInterval(drawer);
-        }
 
         function incrementTopForEveryElement() {
             var collideCheck = false;
@@ -706,7 +634,6 @@
                 return false;
             }
             for (const id of idsArray) {
-                var retVal = shouldIIncrement();
                 collideCheck = doesItCollide(id);
                 //console.log(isClear);
                 //console.log(collideCheck);
@@ -738,34 +665,9 @@
         function doesItCollide(id) {
             //getCoords of images
             var spacecraft1 = document.getElementById("spacecraft1").getBoundingClientRect();
-            //var spacecraft1top = document.getElementById("spacecraft1").getBoundingClientRect().y;
-            // var spacecraft2top = document.getElementById("spacecraft2").getBoundingClientRect().y;
-            // var spacecraft3top = document.getElementById("spacecraft3").getBoundingClientRect().y;
-
-            //spacecrafts all share the same top
-
             //get box bottom
             var box = document.getElementById(id).getBoundingClientRect();
-            //var boxTop = document.getElementById(id).getBoundingClientRect().y;
-            //var boxHeight = document.getElementById(id).getBoundingClientRect().height;
-            //var boxBottom = boxTop + boxHeight;
 
-            //better get the id of the box, might be needed later
-            //var numstr = id.match(/\d+/)[0];
-            //var num = parseInt(numstr);
-            //find column
-
-            //TESTING OTHER WAY 1
-            //console.log(boxTop);
-            /*if(boxTop == spacecraft1top) {
-                console.log("collision");
-                return 1;
-            } else {
-                console.log(boxTop);
-                return 0;
-            }*/
-
-            //TESTING OTHER WAY 2
             return !(
                 ((spacecraft1.y + spacecraft1.height) < (box.y)) ||
                 (spacecraft1.y > (box.y + box.height - 22))
@@ -774,54 +676,6 @@
                 /*((spacecraft1.x + spacecraft1.width) < box.x) ||
                 (spacecraft1.x > (box.x + box.width))*/
             );
-
-            //HUGE COMMENT OUT FOR DEBUG REASONS STARTS HERE
-            /*
-            var remnant = num % 3;
-            var column;
-            if(remnant==0) {
-                column = 3;
-            } else if (remnant == 1) {
-                column = 2;
-            } else if (remnant == 2) {
-                column = 1;
-            }
-            if (num == 1) {
-                column = 1;
-            } else if (num == 2) {
-                column = 2;
-            }
-
-
-            //check if collision
-            if (column == 1) {
-                //check for collistion with spacecraft1
-                if (boxTop == spacecraft1top) {
-                    console.log("collided with 1");
-                    return 1;
-                } else {
-                    return 0;
-                }
-            } else if(column == 2) {
-                //check for collision with spacecraft2
-                if(boxTop == spacecraft2top) {
-                    console.log("collided with 2");
-                    return 1;
-                } else {
-                    return 0;
-                }
-            } else if(column == 3) {
-                //check for collision with spacecraft3
-                if(boxTop == spacecraft3top) {
-                    console.log("collided with 3");
-                    return 1;
-                } else {
-                    return 0;
-                }
-            }
-            */
-            //HUGE COMMENT OUT FOR DEBUG REASONS ENDS HERE
-
         }
 
         function closeModalOnClickAndChangePage() {
@@ -855,7 +709,8 @@
             var modal = document.getElementById("startModal");
             modal.style.display = "none";
             setTimeout(() => {
-                intervalThingy(shouldIntervalRun1, shouldIRun1);
+                //intervalThingy(shouldIntervalRun1, shouldIRun1);
+                systemInit();
             }, 400);
 
         }
@@ -991,6 +846,111 @@
             } else {
                 console.log("game not started");
             }
+        }
+
+        //IMPLEMENTING NEW DROPPING SYSTEM
+        var shouldDrawLoopRun = false;
+        var animationIds = [];
+
+        function callDrawLoop() {
+            shouldDrawLoopRun = true;
+            //isGameLoopRunning = true;
+            var numberdummy = DrawLoop();
+        }
+
+        function shouldIStop() {
+            //check if there are elements on list
+            //if there are not return false
+            if (idsArray.length == 0) {
+                //no elements
+                isGameLoopRunning = false;
+                shouldDrawLoopRun = false;
+                if (shouldFinishModalAppear == true) {
+                    setTimeout(() => {
+                        console.log(score.toString() + "/" + astroColsArray.length.toString());
+                        makeFinishModalAppear();
+                    }, 400);
+
+                }
+                return false;
+            }
+            //check for collision
+            for (const id of idsArray) {
+                var collision = doesItCollide(id);
+                if(collision == true) {
+                    isGameLoopRunning = false;
+                    shouldDrawLoopRun = false;
+                    //appear modal
+                    makeModalAppear();
+                    //collision happened
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function animateEveryElement() {
+            //here we animate every element
+            //we use a timeout so that no function is called immediately
+            setTimeout(() => {
+                var spacecrafttop = document.getElementById("spacecraft1").getBoundingClientRect().top;
+                var spacecraftmiddle = spacecrafttop + 2;
+                var spacecraftmiddlestring = spacecraftmiddle.toString()+'px';
+                var box;
+                var boxtop;
+                var boxtopstring;
+                var counter = 0;
+                var delay; //= counter*177.28;
+                var duration;// = 7960 + delay;
+                var animid;
+                for (const id of idsArray) {
+                    box = document.getElementById(id);
+                    boxtop = box.getBoundingClientRect().top;
+                    boxtopstring = boxtop.toString()+'px';
+                    delay = counter*136.302;
+                    duration = 6120+delay;
+                    animid = box.animate(
+                        [
+                            {top: boxtopstring},
+                            {top: spacecraftmiddlestring}
+                        ], {
+                            delay: delay,
+                            duration: duration,
+                            easing: "linear",
+                            fill: "forwards",
+                            iteations: 1,
+                        }
+                    );
+                    animationIds.push(animid);
+                    if(counter == 0) {
+                        isGameLoopRunning = true;
+                    }
+                    ++counter;
+                }
+            }, 100);
+        }
+
+        function DrawLoop() {
+            var flag = true;
+            var intthing = setInterval(() => {
+                flag = shouldIStop();
+                if(flag == false) {
+                    EndProcedures();
+                    clearInterval(intthing);
+                    return 0;
+                }
+            }, 10);
+        }
+
+        function EndProcedures() {
+            for(const id of idsArray) {
+                document.getElementById(id).stop();
+            }
+        }
+
+        function systemInit() {
+            callDrawLoop();
+            animateEveryElement();
         }
 
     </script>

@@ -73,6 +73,8 @@
     100%{opacity:0;}
 }
 
+
+
 div.item{
     left:0%;
     margin-top: -100px;
@@ -641,4 +643,187 @@ p.infoListElement{
     font-family: 'PixelGosub';
     color: black;
     font-size: 20px;
+}
+
+div.box1{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box2{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box3 {
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box4{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box5{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box6 {
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box7 {
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box8{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box9{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box10{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box11{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box12{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box13{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box14{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box15{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box16{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box17{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box18{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box19{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box20{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box21{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box22{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box23{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box24{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box25{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
+}
+div.box26{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    touch-action: manipulation;
 }
