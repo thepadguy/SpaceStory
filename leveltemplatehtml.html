@@ -653,7 +653,7 @@
         function incrementTop(id) {
             var topValue = document.getElementById(id).style.top;
             var topValueint = parseInt(topValue);
-            var newTopValueint = topValueint + 2;
+            var newTopValueint = topValueint + 0.7*((2*window.innerHeight)/537);
             var newTopString = newTopValueint.toString() + "px;";
             document.getElementById(id).style = "";
             document.getElementById(id).style = "top: " + newTopString;
