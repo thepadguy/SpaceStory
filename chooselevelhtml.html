@@ -213,7 +213,13 @@
             myImg.crossOrigin = 'Anonymous';
             console.log(myImg);
             console.log(myImg.src);
-            myImg.onload = draw;
+            setTimeout(() => {
+                myImg.onload = draw;
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
+
+
             function draw() {
                 var canvas = document.getElementById("imageCanvas");
                 var captionpar = document.getElementById("imageCaption");
@@ -236,10 +242,15 @@
         function passParamsAndChangePage() {
             var modal = document.getElementById("startModal");
             modal.style.display = "none";
-            makeButtonsLeave();
             setTimeout(() => {
+                makeButtonsLeave();
+                setTimeout(() => {
                 window.location.href = "leveltemplatehtml.html?&level_id=" + levelNum.toString();
             }, 2000);
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
+            
         }
         function onClickStartModalClose() {
             var modal = document.getElementById("startModal");

@@ -26,9 +26,10 @@
         function onBackClicked() {
             var startVal = 1;
             var finishVal = 0;
-            document.getElementById("infolistdiv").animate([
-                {opacity: startVal},
-                {opacity: finishVal}
+            setTimeout(() => {
+                document.getElementById("infolistdiv").animate([
+                { opacity: startVal },
+                { opacity: finishVal }
             ], {
                 duration: 2000,
                 iterations: 1,
@@ -37,6 +38,19 @@
                 fill: 'forwards'
             }
             );
+            document.getElementById("sidebuttondiv").animate([
+                {bottom: '0%'},
+                {bottom: '-195%'}
+            ], {
+                duration: 2000,
+                iterations: 1,
+                direction: 'normal',
+                easing: 'linear',
+                fill: 'forwards'
+            });
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
             setTimeout(() => {
                 window.history.back(1);
             }, 2100);

@@ -19,25 +19,42 @@
             document.getElementById("sidebuttons").classList.add("sidebuttonsLeaveAnim");
         }
         function onBackClicked() {
+            setTimeout(() => {
             makeButtonsLeave();
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
             setTimeout(() => {
                 window.history.back(1);
             }, 2000);
         }
         function onChooseLevelClicked() {
+            setTimeout(() => {
             makeButtonsLeave();
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
+            
             setTimeout(() => {
                 window.location.href = "chooselevelhtml.html";
             }, 2000);
         }
         function onClickInfo() {
+            setTimeout(() => {
             makeButtonsLeave();
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
             setTimeout(() => {
                 window.location.href = "helpscreenhtml.html";
             }, 2000);
         }
         function onHelpClick() {
+            setTimeout(() => {
             makeButtonsLeave();
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
             setTimeout(() => {
                 window.location.href = "infoscreenhtml.html"
             }, 2000);

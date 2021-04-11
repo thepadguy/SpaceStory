@@ -23,10 +23,15 @@
     <link rel="stylesheet" href="nametext.css">
     <meta name="viewport" contet="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <script>
+        function makeButtonsLeave() {
+            document.getElementById("buttonDiv").classList.add("menubuttonsLeaveAnim");
+            document.getElementById("sidebuttons").classList.add("sidebuttonsLeaveAnim");
+        }
         function onBackClicked() {
             var startVal = 1;
             var finishVal = 0;
-            document.getElementById("helplistdiv").animate([
+            setTimeout(() => {
+                document.getElementById("helplistdiv").animate([
                 { opacity: startVal },
                 { opacity: finishVal }
             ], {
@@ -37,6 +42,19 @@
                 fill: 'forwards'
             }
             );
+            document.getElementById("sidebuttondiv").animate([
+                {bottom: '0%'},
+                {bottom: '-195%'}
+            ], {
+                duration: 2000,
+                iterations: 1,
+                direction: 'normal',
+                easing: 'linear',
+                fill: 'forwards'
+            });
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
             setTimeout(() => {
                 window.history.back(1);
             }, 2100);

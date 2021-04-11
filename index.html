@@ -37,7 +37,12 @@
                 loadNewFrame();
             }, 3000);
             }
-        window.onclick = changing;
+        function windowClicked() {
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
+            changing();
+        }
+        window.onclick = windowClicked;
     </script>
 </head>
 
