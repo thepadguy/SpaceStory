@@ -1,0 +1,17 @@
+{
+    "background_color": "#c0c0c0",
+    "display": "standalone",
+    "orientation":"any",
+    "theme_color": "#c0c0c0",
+    "short_name": "SpaceStory",
+    "name": "SpaceStory",
+    "description": "Just a game to play when you are bored.",
+    "icons": [
+    {
+      "src": "./images/pwalogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+    ],
+    "start_url": "./index.html"
+    }
