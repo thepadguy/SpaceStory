@@ -5,7 +5,7 @@
     <title>
         SpaceStory
     </title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <style>
         body {
             background-color: #c0c0c0;
@@ -32,26 +32,26 @@
             var finishVal = 0;
             setTimeout(() => {
                 document.getElementById("helplistdiv").animate([
-                { opacity: startVal },
-                { opacity: finishVal }
-            ], {
-                duration: 2000,
-                iterations: 1,
-                direction: 'normal',
-                easing: 'linear',
-                fill: 'forwards'
-            }
-            );
-            document.getElementById("sidebuttondiv").animate([
-                {bottom: '0%'},
-                {bottom: '-195%'}
-            ], {
-                duration: 2000,
-                iterations: 1,
-                direction: 'normal',
-                easing: 'linear',
-                fill: 'forwards'
-            });
+                    { opacity: startVal },
+                    { opacity: finishVal }
+                ], {
+                    duration: 2000,
+                    iterations: 1,
+                    direction: 'normal',
+                    easing: 'linear',
+                    fill: 'forwards'
+                }
+                );
+                document.getElementById("sidebuttondiv").animate([
+                    { bottom: '0%' },
+                    { bottom: '-195%' }
+                ], {
+                    duration: 2000,
+                    iterations: 1,
+                    direction: 'normal',
+                    easing: 'linear',
+                    fill: 'forwards'
+                });
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
@@ -94,13 +94,14 @@
                         Languages used: HTML5, CSS3, JavaScript
                         <br>
                         External libraries used: Jimp (JavaScript library, it is used only in hashing.js, which is not
-                        needed when the game is run)
+                        needed when the game is running)
                         <br>
                         Font: Pixel Gosub
                         <br>
                         Software used: Visual Studio Code 1.55.1, Vivaldi browser 3.6
                         <br>
-                        Tested and debugged on: Vivaldi browser 3.6, Vivaldi browser (android) 3.7.2221.31, Microsoft Edge browser, Acer Aspire
+                        Tested and debugged on: Vivaldi browser 3.6, Vivaldi browser (android) 3.7.2221.31, Microsoft
+                        Edge browser, Acer Aspire
                         3 (Windows 10), Xiaomi Redmi 9C
                         <br>
                         Github: https://github.com/thepadguy/SpaceStory
@@ -113,7 +114,7 @@
                 </li>
                 <li class="levelListItem">
                     <p class="infoListElement">
-                        All images are contained in the images folder and fonts folder. The .nojekyll file exists so
+                        The .nojekyll file exists so
                         that the github page is built properly. The empty.txt files in some directories are there
                         because these directories were created from github webpage and as I know in order to create a
                         directory there you have to put some files into it.

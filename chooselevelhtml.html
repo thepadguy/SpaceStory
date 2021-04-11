@@ -24,14 +24,22 @@
     <script>
         var levelNum = 0;
         function makeButtonsLeave() {
-            document.getElementById("sidebuttondiv").classList.add("sidebuttonsLeaveAnim");
+            setTimeout(() => {
+                document.getElementById("sidebuttondiv").classList.add("sidebuttonsLeaveAnim");
             document.getElementById("levellistdiv").classList.add("levelListLeaveAnim");
+            }, 400);
+                
+            
         }
         function onBackClicked() {
-            makeButtonsLeave();
+            setTimeout(() => {
+                makeButtonsLeave();
             setTimeout(() => {
                 window.history.back(1);
             }, 2000);
+            }, 400);
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
         }
         function onLevelButtonClicked(num) {
             var modal = document.getElementById("startModal");
@@ -241,15 +249,16 @@
         }
         function passParamsAndChangePage() {
             var modal = document.getElementById("startModal");
-            modal.style.display = "none";
+            var audio = new Audio("sounds/clicksound358ms.mp3");
+            audio.play();
             setTimeout(() => {
+                modal.style.display = "none";
                 makeButtonsLeave();
                 setTimeout(() => {
                 window.location.href = "leveltemplatehtml.html?&level_id=" + levelNum.toString();
             }, 2000);
-            }, 400);
-            var audio = new Audio("sounds/clicksound358ms.mp3");
-            audio.play();
+            }, 450);
+            
             
         }
         function onClickStartModalClose() {
