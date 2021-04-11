@@ -9,7 +9,12 @@
     <meta name="theme-color" content="#c0c0c0" />
     <!-- end-theme-color -->
     <!-- start of web manifest -->
-    <link rel="manifest" href="./manifest.json">
+    <script>
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+const el = document.createElement('pwa-update');
+document.body.appendChild(el);
+    </script>
     <!-- end of web manifest -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="nametext.css">
