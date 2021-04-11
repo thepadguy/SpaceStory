@@ -569,7 +569,6 @@
         var spacecrafttop;
         var spacecraftmiddle;
         var toIncrement;
-        var counter = 100;
         setTimeout(() => {
             makeStartModalAppear();
             spacecrafttop = document.getElementById("spacecraft1").getBoundingClientRect().top;
@@ -674,7 +673,6 @@
 
         function onClickColumn1() {
             if (isGameLoopRunning == true) {
-               if (counter > 0) {
                 if (column1ids.length != 0) {
                     var firstId = column1ids[0];
                     var firstelement = document.getElementById(firstId);
@@ -702,10 +700,8 @@
                     firstelement.remove();
                     console.log("removed1");
                     ++score;
-                    counter = counter - 1;
                 } else {
                     console.log("nothing to remove");
-                }
                 }
             } else {
                 console.log("game not started");
@@ -714,7 +710,6 @@
 
         function onClickColumn2() {
             if (isGameLoopRunning == true) {
-                if (counter > 0) {
                 if (column2ids.length != 0) {
                     var firstId = column2ids[0];
                     var firstelement = document.getElementById(firstId);
@@ -741,10 +736,8 @@
                     firstelement.remove();
                     console.log("removed2");
                     ++score;
-                    counter = counter - 1;
                 } else {
                     console.log("nothing to remove");
-                }
                 }
             } else {
                 console.log("game not started");
@@ -753,7 +746,6 @@
 
         function onClickColumn3() {
             if (isGameLoopRunning == true) {
-                 if (counter > 0) {
                 if (column3ids.length != 0) {
                     var firstId = column3ids[0];
                     var firstelement = document.getElementById(firstId);
@@ -779,10 +771,8 @@
                     firstelement.remove();
                     console.log("removed3");
                     ++score;
-                    counter = counter - 1;
                 } else {
                     console.log("nothing to remove");
-                }
                 }
             } else {
                 console.log("game not started");
