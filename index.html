@@ -31,13 +31,8 @@
             document.getElementById('titleAndPlayDiv').classList.add('animatedTitlePlay');
             document.getElementById("ByDiv").classList.add('animatedBy')
             return 1;
-            //window.setTimeout(removeElement('titleAndPlayDiv'),30000);
-            //window.setTimeout(removeElement('ByDiv'), 30000)
         }
         function loadNewFrame() {
-            //result is just so that we have something to pass
-            //the clicked return value
-            //it doesn't have any use
             window.location.href = "buttonshtml.html";
         }
         function changing() {
@@ -53,18 +48,6 @@
         }
         window.onclick = windowClicked;
     </script>
-    <!-- register service worker -->
-    <script>
-
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(function () { console.log("Service Worker Registered, Cheers to PWA Fire!"); });
-            }
-            );
-        }
-    </script>
-    <!-- end of service worker -->
 </head>
 
 <body id="bodyElement">

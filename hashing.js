@@ -98,13 +98,6 @@ var sha256 = function sha256(ascii) {
 var Jimp = require('jimp');
 var seedrandom = require('seedrandom');
 var list = [];
-var list2 = []
-var max = 0;
-var min = 256;
-var firstthird;
-var secondthird;
-var span;
-
 
 Jimp.read('SpaceStory/images/resizedc15zhukov.jpg').then(
     image => {
@@ -128,18 +121,7 @@ Jimp.read('SpaceStory/images/resizedc15zhukov.jpg').then(
                 list.push(1);
             } else {list.push(2);}
         }
-
-
-
-
-
-        /*console.log(max);
-        console.log(min);
-        console.log(span);
-        console.log(firstthird);
-        console.log(secondthird);*/
         console.log(list);
-        //console.log(list2);
         console.log(hashedhash);
         console.log(hashedhash.length.toString());
     }

@@ -9,11 +9,6 @@
     <meta name="theme-color" content="#c0c0c0" />
     <!-- end-theme-color -->
     <link rel="manifest" href="./manifest.json">
-    <!--script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-        }
-    </script-->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <style>
         body {
@@ -53,7 +48,6 @@
         function onLevelButtonClicked(num) {
             var modal = document.getElementById("startModal");
             modal.style.display = "block";
-            //isModalUp = true;
             //cases for which image to load
             var myImg = new Image();
             var caption;
