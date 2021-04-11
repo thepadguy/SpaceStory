@@ -202,6 +202,11 @@
                     caption = "Hero of the Union";
                     levelNum = 32;
                     break;
+                case 33:
+                    myImg.src = "images/question-mark.png";
+                    caption = "No one knows";
+                    levelNum = 33;
+                    break;
                 default:
                     break;
             }
@@ -440,6 +445,16 @@
                 <li class="levelListItem">
                     <button class="levelButton" onclick="onLevelButtonClicked(32);">
                         Mission 32: Georgy Zhukov
+                    </button>
+                </li>
+                <li class="levelListItem">
+                    <p class="levelListHeader">
+                        EXTRA
+                    </p>
+                </li>
+                <li class="levelListItem">
+                    <button class="levelButton" onclick="onLevelButtonClicked(33);">
+                    Random Level
                     </button>
                 </li>
         </div>
