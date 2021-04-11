@@ -116,7 +116,7 @@
                     '/sounds/explosion2edited2sec.mp3',
                     '/sounds/helicopter3510ms.mp3',
                     '/sounds/shotedited25ms.mp3',
-                    '/app.webmanifest'
+                    
             // Do not replace/delete/edit the manifest.js paths below
             //These are links to the extenal social media buttons that should be cached;
             // we have used twitter's as an example
