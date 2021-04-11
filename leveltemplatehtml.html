@@ -5,6 +5,12 @@
     <title>
         SpaceStory
     </title>
+    <!-- theme-color -->
+    <meta name="theme-color" content="#c0c0c0" />
+    <!-- end-theme-color -->
+    <!-- start of web manifest -->
+    <link rel="manifest" href="/app.webmanifest">
+    <!-- end of web manifest -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <style>
         body {
@@ -542,20 +548,20 @@
                 <div id="spacecraftarea" class="spaceCraftArea" style="touch-action: manipulation;">
                     <div id="columncraft1" class="columnCraft1" style="touch-action: manipulation;">
                         <div id="spacecraftcontainer1" class="spaceCraftContainer1" style="touch-action: manipulation;">
-                            <img src="images/spaceshipimage.png" alt="spaceship1" class="spaceCraftImage" id="spacecraft1"
-                                onclick="onClickColumn1();" style="touch-action: manipulation;">
+                            <img src="images/spaceshipimage.png" alt="spaceship1" class="spaceCraftImage"
+                                id="spacecraft1" onclick="onClickColumn1();" style="touch-action: manipulation;">
                         </div>
                     </div>
                     <div id="columncraft2" class="columnCraft2" style="touch-action: manipulation;">
                         <div id="spacecraftcontainer2" class="spaceCraftContainer2" style="touch-action: manipulation;">
-                            <img src="images/spaceshipimage.png" alt="spaceship2" class="spaceCraftImage" id="spacecraft2"
-                                onclick="onClickColumn2();" style="touch-action: manipulation;">
+                            <img src="images/spaceshipimage.png" alt="spaceship2" class="spaceCraftImage"
+                                id="spacecraft2" onclick="onClickColumn2();" style="touch-action: manipulation;">
                         </div>
                     </div>
                     <div id="columncraft3" class="columnCraft3" style="touch-action: manipulation;">
                         <div id="spacecraftcontainer3" class="spaceCraftContainer3" style="touch-action: manipulation;">
-                            <img src="images/spaceshipimage.png" alt="spaceship3" class="spaceCraftImage" id="spacecraft3"
-                                onclick="onClickColumn3();" style="touch-action: manipulation;">
+                            <img src="images/spaceshipimage.png" alt="spaceship3" class="spaceCraftImage"
+                                id="spacecraft3" onclick="onClickColumn3();" style="touch-action: manipulation;">
                         </div>
                     </div>
                 </div>
@@ -698,10 +704,10 @@
             var modal = document.getElementById("myModal");
             setTimeout(() => {
                 modal.style.display = "none;"
-            shouldIRun1 = false;
-            window.history.back(1);
-            shouldIntervalRun1 = false;
-            clearInterval(drawer);
+                shouldIRun1 = false;
+                window.history.back(1);
+                shouldIntervalRun1 = false;
+                clearInterval(drawer);
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();

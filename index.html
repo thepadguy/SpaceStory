@@ -5,7 +5,13 @@
     <title>
         SpaceStory
     </title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <!-- theme-color -->
+    <meta name="theme-color" content="#c0c0c0" />
+    <!-- end-theme-color -->
+    <!-- start of web manifest -->
+    <link rel="manifest" href="/app.webmanifest">
+    <!-- end of web manifest -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="nametext.css">
     <style>
         body {
@@ -36,7 +42,7 @@
             setTimeout(() => {
                 loadNewFrame();
             }, 3000);
-            }
+        }
         function windowClicked() {
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
@@ -44,6 +50,18 @@
         }
         window.onclick = windowClicked;
     </script>
+    <!-- register service worker -->
+    <script>
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(function () { console.log("Service Worker Registered, Cheers to PWA Fire!"); });
+            }
+            );
+        }
+    </script>
+    <!-- end of service worker -->
 </head>
 
 <body id="bodyElement">

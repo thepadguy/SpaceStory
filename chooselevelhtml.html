@@ -5,7 +5,13 @@
     <title>
         SpaceStory
     </title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <!-- theme-color -->
+    <meta name="theme-color" content="#c0c0c0" />
+    <!-- end-theme-color -->
+    <!-- start of web manifest -->
+    <link rel="manifest" href="/app.webmanifest">
+    <!-- end of web manifest -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <style>
         body {
             background-color: #c0c0c0;
@@ -26,17 +32,17 @@
         function makeButtonsLeave() {
             setTimeout(() => {
                 document.getElementById("sidebuttondiv").classList.add("sidebuttonsLeaveAnim");
-            document.getElementById("levellistdiv").classList.add("levelListLeaveAnim");
+                document.getElementById("levellistdiv").classList.add("levelListLeaveAnim");
             }, 400);
-                
-            
+
+
         }
         function onBackClicked() {
             setTimeout(() => {
                 makeButtonsLeave();
-            setTimeout(() => {
-                window.history.back(1);
-            }, 2000);
+                setTimeout(() => {
+                    window.history.back(1);
+                }, 2000);
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
@@ -222,7 +228,7 @@
             console.log(myImg);
             console.log(myImg.src);
             //setTimeout(() => {
-                myImg.onload = draw;
+            myImg.onload = draw;
             //}, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
@@ -255,11 +261,11 @@
                 modal.style.display = "none";
                 makeButtonsLeave();
                 setTimeout(() => {
-                window.location.href = "leveltemplatehtml.html?&level_id=" + levelNum.toString();
-            }, 2000);
+                    window.location.href = "leveltemplatehtml.html?&level_id=" + levelNum.toString();
+                }, 2000);
             }, 450);
-            
-            
+
+
         }
         function onClickStartModalClose() {
             var modal = document.getElementById("startModal");
@@ -474,7 +480,7 @@
                 </li>
                 <li class="levelListItem">
                     <button class="levelButton" onclick="onLevelButtonClicked(33);">
-                    Random Level
+                        Random Level
                     </button>
                 </li>
         </div>

@@ -5,7 +5,13 @@
     <title>
         SpaceStory
     </title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <!-- theme-color -->
+    <meta name="theme-color" content="#c0c0c0" />
+    <!-- end-theme-color -->
+    <!-- start of web manifest -->
+    <link rel="manifest" href="/app.webmanifest">
+    <!-- end of web manifest -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <style>
         body {
             background-color: #c0c0c0;
@@ -28,26 +34,26 @@
             var finishVal = 0;
             setTimeout(() => {
                 document.getElementById("infolistdiv").animate([
-                { opacity: startVal },
-                { opacity: finishVal }
-            ], {
-                duration: 2000,
-                iterations: 1,
-                direction: 'normal',
-                easing: 'linear',
-                fill: 'forwards'
-            }
-            );
-            document.getElementById("sidebuttondiv").animate([
-                {bottom: '0%'},
-                {bottom: '-195%'}
-            ], {
-                duration: 2000,
-                iterations: 1,
-                direction: 'normal',
-                easing: 'linear',
-                fill: 'forwards'
-            });
+                    { opacity: startVal },
+                    { opacity: finishVal }
+                ], {
+                    duration: 2000,
+                    iterations: 1,
+                    direction: 'normal',
+                    easing: 'linear',
+                    fill: 'forwards'
+                }
+                );
+                document.getElementById("sidebuttondiv").animate([
+                    { bottom: '0%' },
+                    { bottom: '-195%' }
+                ], {
+                    duration: 2000,
+                    iterations: 1,
+                    direction: 'normal',
+                    easing: 'linear',
+                    fill: 'forwards'
+                });
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();

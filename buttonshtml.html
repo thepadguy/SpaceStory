@@ -5,7 +5,13 @@
     <title>
         SpaceStory
     </title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <!-- theme-color -->
+    <meta name="theme-color" content="#c0c0c0" />
+    <!-- end-theme-color -->
+    <!-- start of web manifest -->
+    <link rel="manifest" href="/app.webmanifest">
+    <!-- end of web manifest -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="nametext.css">
     <style>
         body {
@@ -20,7 +26,7 @@
         }
         function onBackClicked() {
             setTimeout(() => {
-            makeButtonsLeave();
+                makeButtonsLeave();
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
@@ -30,18 +36,18 @@
         }
         function onChooseLevelClicked() {
             setTimeout(() => {
-            makeButtonsLeave();
+                makeButtonsLeave();
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
-            
+
             setTimeout(() => {
                 window.location.href = "chooselevelhtml.html";
             }, 2000);
         }
         function onClickInfo() {
             setTimeout(() => {
-            makeButtonsLeave();
+                makeButtonsLeave();
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
@@ -51,7 +57,7 @@
         }
         function onHelpClick() {
             setTimeout(() => {
-            makeButtonsLeave();
+                makeButtonsLeave();
             }, 400);
             var audio = new Audio("sounds/clicksound358ms.mp3");
             audio.play();
@@ -81,11 +87,11 @@
             <button class="sidebutton" onclick="onHelpClick();">
                 help
             </button>
-        </br>
+            </br>
             <button class="sidebutton" onclick="onClickInfo();">
                 info
             </button>
-        </br>
+            </br>
             <button class="sidebutton" onclick="onBackClicked();">
                 back
             </button>
