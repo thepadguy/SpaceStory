@@ -27,3 +27,10 @@ the three dots on the top right corner ot the window, click install app, and wai
 After this the app will be on your homescreen. When using the offline mode, every time you enter a window
 (level or other screen) you hadn't entered before in offline mode, you need to be connected to the Internet,
 so that the contents can be cached. The whole webpage does not exceed 13MB, so the app should have at most 13MB size.
+
+## Notes (and disclaimers)
+
+For some reasont that I cannot understand, the game won't work on Microsoft Edge (Windows 10) but will work fine on
+Vivaldi browser on the SAME computer. Also on my mobile phone which has been set up with gesture navigation
+instead of the traditional buttons it cannot go to the previous page when a mission is aborted or finished. I honestly
+don't know why this is happening and until I do know I cannot fix this behaviour.
