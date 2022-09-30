@@ -9,11 +9,6 @@
     <meta name="theme-color" content="#c0c0c0" />
     <!-- end-theme-color -->
     <link rel="manifest" href="./manifest.json">
-    <!--script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-        }
-    </script-->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <style>
         body {
@@ -27,7 +22,6 @@
         contet="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
     <script>
         var astroColsArray = [];
-        //astroColsArray = [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2];
         var idsArray = [];
         var column1ids = [];
         var column2ids = [];
@@ -35,9 +29,7 @@
         var score = 0;
         var url = window.location.href;
         var urlSearcher = new URLSearchParams(url);
-        //var mapName = urlSearcher.get("level_name");
         var levelId = urlSearcher.get("level_id");
-        //console.log(mapName);
         console.log(levelId);
         switch (levelId) {
             case "1":
@@ -499,9 +491,6 @@
                             var topCoord = (-1) * (counter - 1) * 20 - 30;
                             var topCoords = topCoord.toString();
                             el.setAttribute("style", "top: " + topCoords + "px;");
-
-
-
                             ++counter;
                             astroDiv1.appendChild(el);
                             idsArray.push(id);
@@ -517,14 +506,10 @@
                             var topCoord = (-1) * (counter - 1) * 20 - 30;
                             var topCoords = topCoord.toString();
                             el.setAttribute("style", "top: " + topCoords + "px;");
-
-
-
                             ++counter;
                             astroDiv2.appendChild(el);
                             idsArray.push(id);
                             column2ids.push(id);
-
                         } else if (num == 2) {
                             //creating element
                             var el = document.createElement("div");
@@ -536,13 +521,10 @@
                             var topCoord = (-1) * (counter - 1) * 20 - 30;
                             var topCoords = topCoord.toString();
                             el.setAttribute("style", "top: " + topCoords + "px;");
-
-
                             ++counter;
                             astroDiv3.appendChild(el);
                             idsArray.push(id);
                             column3ids.push(id);
-
                         }
                     }
                 </script>
@@ -579,7 +561,6 @@
         </div>
     </div>
     <script>
-
         var flag1 = true;
         var shouldIRun1 = true;
         var shouldIntervalRun1 = true;
@@ -588,25 +569,16 @@
         var spacecrafttop;
         var spacecraftmiddle;
         var toIncrement;
-        //must be at least 2000sec because we have to wait for animation to finish
         setTimeout(() => {
-            //just declaring some vars
             makeStartModalAppear();
             spacecrafttop = document.getElementById("spacecraft1").getBoundingClientRect().top;
             spacecraftmiddle = spacecrafttop + 22;
             toIncrement = spacecraftmiddle / 268.8515;
             console.log(toIncrement)
-            //intervalThingy(shouldIntervalRun1, shouldIRun1);
-            /*
-            FOR DEBUGGING PURPOSES
-            for(i=0;i<400;++i) {
-                incrementTopForEveryElement();
-            }*/
+
         }, 3500);
 
-        //TO CONTINUE FROM HEREEEEEEEEEEEEEEEEEEE
         //for detecting keyboard press
-        //this code should be modified
         window.onkeypress = function (evt) {
             evt = evt || window.event;
             var charCode = evt.keyCode || evt.which;
@@ -621,70 +593,6 @@
             }
         }
 
-        function intervalThingy(intervalFlag, innerFlag) {
-            var flagin = true;
-            if (intervalFlag == true) {
-                var drawer = setInterval(() => {
-                    flagin = doesItCollide();
-                    //console.log(flagin);
-                    if (flagin == false) {
-                        for (const id of idsArray) {
-                            document.getElementById(id).stop();
-                        }
-                        setTimeout(() => {
-                            makeFinishModalAppear();
-                        }, 400);
-                        clearInterval(drawer);
-                    }
-                }, 5);
-            }
-        }
-
-
-
-        function incrementTopForEveryElement() {
-            var collideCheck = false;
-            var flag2 = true;
-            if (idsArray.length == 0) {
-                shouldIntervalRun1 = false;
-                isGameLoopRunning = false;
-                if (shouldFinishModalAppear == true) {
-                    setTimeout(() => {
-                        console.log(score.toString() + "/" + astroColsArray.length.toString());
-                        makeFinishModalAppear();
-                    }, 400);
-
-                }
-                //clearInterval(drawer);
-                return false;
-            }
-            for (const id of idsArray) {
-                collideCheck = doesItCollide(id);
-                //console.log(isClear);
-                //console.log(collideCheck);
-                //console.log(retVal);
-                if ((retVal == 1)) {
-                    //clearInterval(drawer);
-                    shouldIntervalRun1 = false;
-                    isGameLoopRunning = false;
-                    console.log(isGameLoopRunning);
-                    alert("retval is 1");
-                    return false;
-                } else if (collideCheck == true) {
-                    //clearInterval(drawer);
-                    shouldIntervalRun1 = false;
-                    isGameLoopRunning = false;
-                    console.log(isGameLoopRunning);
-                    console.log(score.toString() + "/" + astroColsArray.length.toString());
-                    makeModalAppear();
-                    //clearInterval(drawer);
-                    return false;
-                }
-                incrementTop(id, toIncrement);
-            }
-            return true;
-        }
-
         //here we write the function that checks
         //whether a block is upon the image
         function doesItCollide(id) {
@@ -696,10 +604,6 @@
             return !(
                 ((spacecraft1.y + spacecraft1.height) < (box.y)) ||
                 (spacecraft1.y > (box.y + box.height - 22))
-                //stuff below here not needed
-                //||
-                /*((spacecraft1.x + spacecraft1.width) < box.x) ||
-                (spacecraft1.x > (box.x + box.width))*/
             );
         }
 
@@ -719,12 +623,6 @@
 
         function makeModalAppear() {
             var modal = document.getElementById("myModal");
-            /*var modalParent = document.getElementById("forModal");
-            modalParent.style.visibility = "";
-            modalParent.style.zIndex = "";
-            modalParent.style.visibility = "visible;"
-            modalParent.style.zIndex = "999"
-            modalParent.style.display = "block";*/
             document.getElementById("modal-paragraph1").innerHTML = document.getElementById("modal-paragraph1").innerHTML + (score.toString() + "/" + astroColsArray.length.toString());
             modal.style.display = "block";
         }
@@ -739,7 +637,6 @@
             setTimeout(() => {
                 modal.style.display = "none";
                 setTimeout(() => {
-                    //intervalThingy(shouldIntervalRun1, shouldIRun1);
                     systemInit();
                 }, 400);
             }, 400);
@@ -799,7 +696,6 @@
 
 
                     idsArray.splice(indexInIds, 1)
-                    //console.log(idsArray);
                     column1ids.shift();
                     firstelement.remove();
                     console.log("removed1");
@@ -836,7 +732,6 @@
                     }, 15);
 
                     idsArray.splice(indexInIds, 1);
-                    //console.log(idsArray);
                     column2ids.shift();
                     firstelement.remove();
                     console.log("removed2");
@@ -873,8 +768,6 @@
                     setTimeout(() => {
                         shotDiv.remove();
                     }, 15);
-
-                    //console.log(idsArray);
                     column3ids.shift();
                     firstelement.remove();
                     console.log("removed3");
@@ -1013,7 +906,7 @@
             var audio = new Audio("sounds/helicopter3510ms.mp3");
             audio.play()
         }
-
+        //the end version, on 6:30
     </script>
 </body>
 
